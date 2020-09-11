@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/AdminLTE.min.css">
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript">
+			function checkNull(id, lable) {
+				var val = $("#" + id ).val();
+				if (val == null || val == "") {
+					document.getElementById(lable).innerHTML = "此处为必填";
+				} else {
+					document.getElementById(lable).innerHTML = "";
+				}
+			}
+			function checkPassword() {
+				var password = $("#password").val();
+				var repassword = $("#repassword").val();
+				var obj = document.getElementById("save");
+				if (password == repassword) {
+					obj.style.display = "block";
+					document.getElementById("repasswordLable").innerHTML = "<i class='fa fa-check'></i>";
+				} else {
+					document.getElementById("repasswordLable").innerHTML = "两次输入密码不一致";
+					obj.style.display = "none";
+				}
+			}
+
+			function saveUser() {
+				var saveFrom = $("#saveForm").serialize();
+				$.ajax({
+					url: "../update",
+					type: "post",
+					data: saveFrom,
+					dataType: "json",
+					success: function (data) {
+						if (data.result) {
+							alert("添加成功！");
+							parent.closeModal();
+							parent.openFrames("/user/index/1");
+						} else {
+							alert(data.data);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<form id="saveForm" role="form">
+						<table style="border-spacing: 5px; border-collapse: separate">
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-user"></i>&nbsp;
+									姓名：
+								</td>
+								<td>
+									<input id="name" type="text" onblur="checkNull('name', 'nameLable')" name="name" class="form-control" style="width: 300px;" placeholder="请填写您的姓名"/>
+								</td>
+								<td>
+									<span id="nameLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-mobile-phone"></i>&nbsp;
+									手机号码：
+								</td>
+								<td>
+									<input id="cellphone" type="text" onblur="checkNull('cellphone', 'cellphoneLable')" name="cellphone" class="form-control" style="width: 300px;" placeholder="请填写您的手机号码"/>
+								</td>
+								<td>
+									<span id="cellphoneLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-mobile-phone"></i>&nbsp;
+									身份证号码：
+								</td>
+								<td>
+									<input id="idCard" type="text" onblur="checkNull('idCard', 'idCardLable')" name="idCard" class="form-control" style="width: 300px;" placeholder="请填写您的身份证号码"/>
+								</td>
+								<td>
+									<span id="idCardLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-lock"></i>&nbsp;
+									角色：
+								</td>
+								<td>
+									<select name="roleId" class="form-control">
+										<option th:each="role:${roleList}" th:value="${role.id}" th:text="${role.name}"></option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-lock"></i>&nbsp;
+									登录密码：
+								</td>
+								<td>
+									<input id="password" type="password" onblur="checkNull('password', 'passwordLable')" name="password" class="form-control" style="width: 300px;" placeholder="请填写您的登录密码"/>
+								</td>
+								<td>
+									<span id="passwordLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-lock"></i>&nbsp;
+									密码确认：
+								</td>
+								<td>
+									<input type="password" onblur="checkPassword()" id="repassword" class="form-control" style="width: 300px;" placeholder="请再次确认您的登录密码"/>
+								</td>
+								<td>
+									<span id="repasswordLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+							<tr>
+								<td style="text-align: right">
+									<i class="fa fa-envelope-o"></i>&nbsp;
+									电子邮箱：
+								</td>
+								<td>
+									<input type="text" onblur="checkNull('avatar', 'avatarLable')" id="avatar" name="avatar" class="form-control" style="width: 300px;" placeholder="请填写您的电子邮箱"/>
+								</td>
+								<td>
+									<span id="avatarLable" style="color: red;">*</span>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2" style="text-align: right;">
+									<div id="save">
+										<a href="javascript:saveUser()" class="btn btn-success btn-sm">
+											<i class="fa fa-save"></i>&nbsp;
+											保存
+										</a>
+									</div>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

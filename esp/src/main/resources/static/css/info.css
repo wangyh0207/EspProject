@@ -1,0 +1,2399 @@
+body {
+	margin: 0;
+	background: #000;
+}
+.card {
+	width: 70vw;
+	height: 80vh;
+	margin: 10vh 15vw;
+	background: rgba(255, 255, 255, 0.05);
+	color: #fff;
+	border-radius: 2px;
+	padding: 18vh 10vw;
+	box-sizing: border-box;
+	position: relative;
+	animation: card 0.8s ease-out;
+	animation-fill-mode: forwards;
+}
+.card .content {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 2px;
+}
+.card .content h1 {
+	display: inline-block;
+	padding: 8px 16px;
+	margin: 4px 0;
+	width: auto;
+	font-family: 'PT Serif', serif;
+	transform: scale(1, 0.9);
+}
+.card .content p {
+	margin: 4px 0;
+	padding: 4px 16px;
+	display: inline-block;
+}
+.card .content p,
+.card .content h4,
+.card .content h5,
+.card .content h6 {
+	font-weight: 100;
+}
+.card .content a {
+	font-weight: 700;
+	text-decoration: none;
+	box-shadow: 0 -3px rgba(255, 255, 255, 0.3) inset;
+}
+.card .content .column {
+	display: inline-block;
+	width: 20vw;
+	margin-top: 16px;
+	font-size: 0.8em;
+}
+.card .content .column * {
+	margin: 3px 0;
+	display: inline-block;
+}
+.card .content .tabs {
+	position: absolute;
+	bottom: 2.5vh;
+	right: 2.5vw;
+	font-size: 0.6em;
+}
+.card .content .tabs .tab {
+	margin: 0 8px;
+	padding: 0;
+	float: right;
+	font-weight: 100;
+}
+.card .content .light {
+	color: #fff;
+}
+.card .content .medium {
+	color: rgba(255, 255, 255, 0.85);
+}
+.card .content .dark {
+	color: rgba(255, 255, 255, 0.5);
+}
+.card * {
+	padding-left: 0 !important;
+}
+.card p *,
+.card h1 *,
+.card h2 *,
+.card h3 *,
+.card h4 *,
+.card h5 *,
+.card h6 *,
+.card div * {
+	animation: fadein 3s;
+}
+.card p.light,
+.card h1.light,
+.card h2.light,
+.card h3.light,
+.card h4.light,
+.card h5.light,
+.card h6.light,
+.card div.light {
+	animation: boxshadow-light 3s;
+}
+.card p.medium,
+.card h1.medium,
+.card h2.medium,
+.card h3.medium,
+.card h4.medium,
+.card h5.medium,
+.card h6.medium,
+.card div.medium {
+	animation: boxshadow-medium 3s;
+}
+.card p.dark,
+.card h1.dark,
+.card h2.dark,
+.card h3.dark,
+.card h4.dark,
+.card h5.dark,
+.card h6.dark,
+.card div.dark {
+	animation: boxshadow-dark 3s;
+}
+.card p:nth-child(1),
+.card h1:nth-child(1),
+.card h2:nth-child(1),
+.card h3:nth-child(1),
+.card h4:nth-child(1),
+.card h5:nth-child(1),
+.card h6:nth-child(1),
+.card div:nth-child(1) {
+	animation-duration: 3.83333s;
+}
+.card p:nth-child(1) *,
+.card h1:nth-child(1) *,
+.card h2:nth-child(1) *,
+.card h3:nth-child(1) *,
+.card h4:nth-child(1) *,
+.card h5:nth-child(1) *,
+.card h6:nth-child(1) *,
+.card div:nth-child(1) * {
+	animation-duration: 3.83333s;
+}
+.card p:nth-child(2),
+.card h1:nth-child(2),
+.card h2:nth-child(2),
+.card h3:nth-child(2),
+.card h4:nth-child(2),
+.card h5:nth-child(2),
+.card h6:nth-child(2),
+.card div:nth-child(2) {
+	animation-duration: 4.16667s;
+}
+.card p:nth-child(2) *,
+.card h1:nth-child(2) *,
+.card h2:nth-child(2) *,
+.card h3:nth-child(2) *,
+.card h4:nth-child(2) *,
+.card h5:nth-child(2) *,
+.card h6:nth-child(2) *,
+.card div:nth-child(2) * {
+	animation-duration: 4.16667s;
+}
+.card p:nth-child(3),
+.card h1:nth-child(3),
+.card h2:nth-child(3),
+.card h3:nth-child(3),
+.card h4:nth-child(3),
+.card h5:nth-child(3),
+.card h6:nth-child(3),
+.card div:nth-child(3) {
+	animation-duration: 4.5s;
+}
+.card p:nth-child(3) *,
+.card h1:nth-child(3) *,
+.card h2:nth-child(3) *,
+.card h3:nth-child(3) *,
+.card h4:nth-child(3) *,
+.card h5:nth-child(3) *,
+.card h6:nth-child(3) *,
+.card div:nth-child(3) * {
+	animation-duration: 4.5s;
+}
+.card p:nth-child(4),
+.card h1:nth-child(4),
+.card h2:nth-child(4),
+.card h3:nth-child(4),
+.card h4:nth-child(4),
+.card h5:nth-child(4),
+.card h6:nth-child(4),
+.card div:nth-child(4) {
+	animation-duration: 4.83333s;
+}
+.card p:nth-child(4) *,
+.card h1:nth-child(4) *,
+.card h2:nth-child(4) *,
+.card h3:nth-child(4) *,
+.card h4:nth-child(4) *,
+.card h5:nth-child(4) *,
+.card h6:nth-child(4) *,
+.card div:nth-child(4) * {
+	animation-duration: 4.83333s;
+}
+.card p:nth-child(5),
+.card h1:nth-child(5),
+.card h2:nth-child(5),
+.card h3:nth-child(5),
+.card h4:nth-child(5),
+.card h5:nth-child(5),
+.card h6:nth-child(5),
+.card div:nth-child(5) {
+	animation-duration: 5.16667s;
+}
+.card p:nth-child(5) *,
+.card h1:nth-child(5) *,
+.card h2:nth-child(5) *,
+.card h3:nth-child(5) *,
+.card h4:nth-child(5) *,
+.card h5:nth-child(5) *,
+.card h6:nth-child(5) *,
+.card div:nth-child(5) * {
+	animation-duration: 5.16667s;
+}
+.card p:nth-child(6),
+.card h1:nth-child(6),
+.card h2:nth-child(6),
+.card h3:nth-child(6),
+.card h4:nth-child(6),
+.card h5:nth-child(6),
+.card h6:nth-child(6),
+.card div:nth-child(6) {
+	animation-duration: 5.5s;
+}
+.card p:nth-child(6) *,
+.card h1:nth-child(6) *,
+.card h2:nth-child(6) *,
+.card h3:nth-child(6) *,
+.card h4:nth-child(6) *,
+.card h5:nth-child(6) *,
+.card h6:nth-child(6) *,
+.card div:nth-child(6) * {
+	animation-duration: 5.5s;
+}
+.card p:nth-child(7),
+.card h1:nth-child(7),
+.card h2:nth-child(7),
+.card h3:nth-child(7),
+.card h4:nth-child(7),
+.card h5:nth-child(7),
+.card h6:nth-child(7),
+.card div:nth-child(7) {
+	animation-duration: 5.83333s;
+}
+.card p:nth-child(7) *,
+.card h1:nth-child(7) *,
+.card h2:nth-child(7) *,
+.card h3:nth-child(7) *,
+.card h4:nth-child(7) *,
+.card h5:nth-child(7) *,
+.card h6:nth-child(7) *,
+.card div:nth-child(7) * {
+	animation-duration: 5.83333s;
+}
+.card p:nth-child(8),
+.card h1:nth-child(8),
+.card h2:nth-child(8),
+.card h3:nth-child(8),
+.card h4:nth-child(8),
+.card h5:nth-child(8),
+.card h6:nth-child(8),
+.card div:nth-child(8) {
+	animation-duration: 6.16667s;
+}
+.card p:nth-child(8) *,
+.card h1:nth-child(8) *,
+.card h2:nth-child(8) *,
+.card h3:nth-child(8) *,
+.card h4:nth-child(8) *,
+.card h5:nth-child(8) *,
+.card h6:nth-child(8) *,
+.card div:nth-child(8) * {
+	animation-duration: 6.16667s;
+}
+.card p:nth-child(9),
+.card h1:nth-child(9),
+.card h2:nth-child(9),
+.card h3:nth-child(9),
+.card h4:nth-child(9),
+.card h5:nth-child(9),
+.card h6:nth-child(9),
+.card div:nth-child(9) {
+	animation-duration: 6.5s;
+}
+.card p:nth-child(9) *,
+.card h1:nth-child(9) *,
+.card h2:nth-child(9) *,
+.card h3:nth-child(9) *,
+.card h4:nth-child(9) *,
+.card h5:nth-child(9) *,
+.card h6:nth-child(9) *,
+.card div:nth-child(9) * {
+	animation-duration: 6.5s;
+}
+.card p:nth-child(10),
+.card h1:nth-child(10),
+.card h2:nth-child(10),
+.card h3:nth-child(10),
+.card h4:nth-child(10),
+.card h5:nth-child(10),
+.card h6:nth-child(10),
+.card div:nth-child(10) {
+	animation-duration: 6.83333s;
+}
+.card p:nth-child(10) *,
+.card h1:nth-child(10) *,
+.card h2:nth-child(10) *,
+.card h3:nth-child(10) *,
+.card h4:nth-child(10) *,
+.card h5:nth-child(10) *,
+.card h6:nth-child(10) *,
+.card div:nth-child(10) * {
+	animation-duration: 6.83333s;
+}
+.card p:nth-child(11),
+.card h1:nth-child(11),
+.card h2:nth-child(11),
+.card h3:nth-child(11),
+.card h4:nth-child(11),
+.card h5:nth-child(11),
+.card h6:nth-child(11),
+.card div:nth-child(11) {
+	animation-duration: 7.16667s;
+}
+.card p:nth-child(11) *,
+.card h1:nth-child(11) *,
+.card h2:nth-child(11) *,
+.card h3:nth-child(11) *,
+.card h4:nth-child(11) *,
+.card h5:nth-child(11) *,
+.card h6:nth-child(11) *,
+.card div:nth-child(11) * {
+	animation-duration: 7.16667s;
+}
+.card p:nth-child(12),
+.card h1:nth-child(12),
+.card h2:nth-child(12),
+.card h3:nth-child(12),
+.card h4:nth-child(12),
+.card h5:nth-child(12),
+.card h6:nth-child(12),
+.card div:nth-child(12) {
+	animation-duration: 7.5s;
+}
+.card p:nth-child(12) *,
+.card h1:nth-child(12) *,
+.card h2:nth-child(12) *,
+.card h3:nth-child(12) *,
+.card h4:nth-child(12) *,
+.card h5:nth-child(12) *,
+.card h6:nth-child(12) *,
+.card div:nth-child(12) * {
+	animation-duration: 7.5s;
+}
+.card p:nth-child(13),
+.card h1:nth-child(13),
+.card h2:nth-child(13),
+.card h3:nth-child(13),
+.card h4:nth-child(13),
+.card h5:nth-child(13),
+.card h6:nth-child(13),
+.card div:nth-child(13) {
+	animation-duration: 7.83333s;
+}
+.card p:nth-child(13) *,
+.card h1:nth-child(13) *,
+.card h2:nth-child(13) *,
+.card h3:nth-child(13) *,
+.card h4:nth-child(13) *,
+.card h5:nth-child(13) *,
+.card h6:nth-child(13) *,
+.card div:nth-child(13) * {
+	animation-duration: 7.83333s;
+}
+.card p:nth-child(14),
+.card h1:nth-child(14),
+.card h2:nth-child(14),
+.card h3:nth-child(14),
+.card h4:nth-child(14),
+.card h5:nth-child(14),
+.card h6:nth-child(14),
+.card div:nth-child(14) {
+	animation-duration: 8.16667s;
+}
+.card p:nth-child(14) *,
+.card h1:nth-child(14) *,
+.card h2:nth-child(14) *,
+.card h3:nth-child(14) *,
+.card h4:nth-child(14) *,
+.card h5:nth-child(14) *,
+.card h6:nth-child(14) *,
+.card div:nth-child(14) * {
+	animation-duration: 8.16667s;
+}
+.card p:nth-child(15),
+.card h1:nth-child(15),
+.card h2:nth-child(15),
+.card h3:nth-child(15),
+.card h4:nth-child(15),
+.card h5:nth-child(15),
+.card h6:nth-child(15),
+.card div:nth-child(15) {
+	animation-duration: 8.5s;
+}
+.card p:nth-child(15) *,
+.card h1:nth-child(15) *,
+.card h2:nth-child(15) *,
+.card h3:nth-child(15) *,
+.card h4:nth-child(15) *,
+.card h5:nth-child(15) *,
+.card h6:nth-child(15) *,
+.card div:nth-child(15) * {
+	animation-duration: 8.5s;
+}
+.card p:nth-child(16),
+.card h1:nth-child(16),
+.card h2:nth-child(16),
+.card h3:nth-child(16),
+.card h4:nth-child(16),
+.card h5:nth-child(16),
+.card h6:nth-child(16),
+.card div:nth-child(16) {
+	animation-duration: 8.83333s;
+}
+.card p:nth-child(16) *,
+.card h1:nth-child(16) *,
+.card h2:nth-child(16) *,
+.card h3:nth-child(16) *,
+.card h4:nth-child(16) *,
+.card h5:nth-child(16) *,
+.card h6:nth-child(16) *,
+.card div:nth-child(16) * {
+	animation-duration: 8.83333s;
+}
+.card p:nth-child(17),
+.card h1:nth-child(17),
+.card h2:nth-child(17),
+.card h3:nth-child(17),
+.card h4:nth-child(17),
+.card h5:nth-child(17),
+.card h6:nth-child(17),
+.card div:nth-child(17) {
+	animation-duration: 9.16667s;
+}
+.card p:nth-child(17) *,
+.card h1:nth-child(17) *,
+.card h2:nth-child(17) *,
+.card h3:nth-child(17) *,
+.card h4:nth-child(17) *,
+.card h5:nth-child(17) *,
+.card h6:nth-child(17) *,
+.card div:nth-child(17) * {
+	animation-duration: 9.16667s;
+}
+.card p:nth-child(18),
+.card h1:nth-child(18),
+.card h2:nth-child(18),
+.card h3:nth-child(18),
+.card h4:nth-child(18),
+.card h5:nth-child(18),
+.card h6:nth-child(18),
+.card div:nth-child(18) {
+	animation-duration: 9.5s;
+}
+.card p:nth-child(18) *,
+.card h1:nth-child(18) *,
+.card h2:nth-child(18) *,
+.card h3:nth-child(18) *,
+.card h4:nth-child(18) *,
+.card h5:nth-child(18) *,
+.card h6:nth-child(18) *,
+.card div:nth-child(18) * {
+	animation-duration: 9.5s;
+}
+.card p:nth-child(19),
+.card h1:nth-child(19),
+.card h2:nth-child(19),
+.card h3:nth-child(19),
+.card h4:nth-child(19),
+.card h5:nth-child(19),
+.card h6:nth-child(19),
+.card div:nth-child(19) {
+	animation-duration: 9.83333s;
+}
+.card p:nth-child(19) *,
+.card h1:nth-child(19) *,
+.card h2:nth-child(19) *,
+.card h3:nth-child(19) *,
+.card h4:nth-child(19) *,
+.card h5:nth-child(19) *,
+.card h6:nth-child(19) *,
+.card div:nth-child(19) * {
+	animation-duration: 9.83333s;
+}
+.card p:nth-child(20),
+.card h1:nth-child(20),
+.card h2:nth-child(20),
+.card h3:nth-child(20),
+.card h4:nth-child(20),
+.card h5:nth-child(20),
+.card h6:nth-child(20),
+.card div:nth-child(20) {
+	animation-duration: 10.16667s;
+}
+.card p:nth-child(20) *,
+.card h1:nth-child(20) *,
+.card h2:nth-child(20) *,
+.card h3:nth-child(20) *,
+.card h4:nth-child(20) *,
+.card h5:nth-child(20) *,
+.card h6:nth-child(20) *,
+.card div:nth-child(20) * {
+	animation-duration: 10.16667s;
+}
+.card p:nth-child(21),
+.card h1:nth-child(21),
+.card h2:nth-child(21),
+.card h3:nth-child(21),
+.card h4:nth-child(21),
+.card h5:nth-child(21),
+.card h6:nth-child(21),
+.card div:nth-child(21) {
+	animation-duration: 10.5s;
+}
+.card p:nth-child(21) *,
+.card h1:nth-child(21) *,
+.card h2:nth-child(21) *,
+.card h3:nth-child(21) *,
+.card h4:nth-child(21) *,
+.card h5:nth-child(21) *,
+.card h6:nth-child(21) *,
+.card div:nth-child(21) * {
+	animation-duration: 10.5s;
+}
+.card p:nth-child(22),
+.card h1:nth-child(22),
+.card h2:nth-child(22),
+.card h3:nth-child(22),
+.card h4:nth-child(22),
+.card h5:nth-child(22),
+.card h6:nth-child(22),
+.card div:nth-child(22) {
+	animation-duration: 10.83333s;
+}
+.card p:nth-child(22) *,
+.card h1:nth-child(22) *,
+.card h2:nth-child(22) *,
+.card h3:nth-child(22) *,
+.card h4:nth-child(22) *,
+.card h5:nth-child(22) *,
+.card h6:nth-child(22) *,
+.card div:nth-child(22) * {
+	animation-duration: 10.83333s;
+}
+.card p:nth-child(23),
+.card h1:nth-child(23),
+.card h2:nth-child(23),
+.card h3:nth-child(23),
+.card h4:nth-child(23),
+.card h5:nth-child(23),
+.card h6:nth-child(23),
+.card div:nth-child(23) {
+	animation-duration: 11.16667s;
+}
+.card p:nth-child(23) *,
+.card h1:nth-child(23) *,
+.card h2:nth-child(23) *,
+.card h3:nth-child(23) *,
+.card h4:nth-child(23) *,
+.card h5:nth-child(23) *,
+.card h6:nth-child(23) *,
+.card div:nth-child(23) * {
+	animation-duration: 11.16667s;
+}
+.card p:nth-child(24),
+.card h1:nth-child(24),
+.card h2:nth-child(24),
+.card h3:nth-child(24),
+.card h4:nth-child(24),
+.card h5:nth-child(24),
+.card h6:nth-child(24),
+.card div:nth-child(24) {
+	animation-duration: 11.5s;
+}
+.card p:nth-child(24) *,
+.card h1:nth-child(24) *,
+.card h2:nth-child(24) *,
+.card h3:nth-child(24) *,
+.card h4:nth-child(24) *,
+.card h5:nth-child(24) *,
+.card h6:nth-child(24) *,
+.card div:nth-child(24) * {
+	animation-duration: 11.5s;
+}
+.card p:nth-child(25),
+.card h1:nth-child(25),
+.card h2:nth-child(25),
+.card h3:nth-child(25),
+.card h4:nth-child(25),
+.card h5:nth-child(25),
+.card h6:nth-child(25),
+.card div:nth-child(25) {
+	animation-duration: 11.83333s;
+}
+.card p:nth-child(25) *,
+.card h1:nth-child(25) *,
+.card h2:nth-child(25) *,
+.card h3:nth-child(25) *,
+.card h4:nth-child(25) *,
+.card h5:nth-child(25) *,
+.card h6:nth-child(25) *,
+.card div:nth-child(25) * {
+	animation-duration: 11.83333s;
+}
+.card p:nth-child(26),
+.card h1:nth-child(26),
+.card h2:nth-child(26),
+.card h3:nth-child(26),
+.card h4:nth-child(26),
+.card h5:nth-child(26),
+.card h6:nth-child(26),
+.card div:nth-child(26) {
+	animation-duration: 12.16667s;
+}
+.card p:nth-child(26) *,
+.card h1:nth-child(26) *,
+.card h2:nth-child(26) *,
+.card h3:nth-child(26) *,
+.card h4:nth-child(26) *,
+.card h5:nth-child(26) *,
+.card h6:nth-child(26) *,
+.card div:nth-child(26) * {
+	animation-duration: 12.16667s;
+}
+.card p:nth-child(27),
+.card h1:nth-child(27),
+.card h2:nth-child(27),
+.card h3:nth-child(27),
+.card h4:nth-child(27),
+.card h5:nth-child(27),
+.card h6:nth-child(27),
+.card div:nth-child(27) {
+	animation-duration: 12.5s;
+}
+.card p:nth-child(27) *,
+.card h1:nth-child(27) *,
+.card h2:nth-child(27) *,
+.card h3:nth-child(27) *,
+.card h4:nth-child(27) *,
+.card h5:nth-child(27) *,
+.card h6:nth-child(27) *,
+.card div:nth-child(27) * {
+	animation-duration: 12.5s;
+}
+.card p:nth-child(28),
+.card h1:nth-child(28),
+.card h2:nth-child(28),
+.card h3:nth-child(28),
+.card h4:nth-child(28),
+.card h5:nth-child(28),
+.card h6:nth-child(28),
+.card div:nth-child(28) {
+	animation-duration: 12.83333s;
+}
+.card p:nth-child(28) *,
+.card h1:nth-child(28) *,
+.card h2:nth-child(28) *,
+.card h3:nth-child(28) *,
+.card h4:nth-child(28) *,
+.card h5:nth-child(28) *,
+.card h6:nth-child(28) *,
+.card div:nth-child(28) * {
+	animation-duration: 12.83333s;
+}
+.card p:nth-child(29),
+.card h1:nth-child(29),
+.card h2:nth-child(29),
+.card h3:nth-child(29),
+.card h4:nth-child(29),
+.card h5:nth-child(29),
+.card h6:nth-child(29),
+.card div:nth-child(29) {
+	animation-duration: 13.16667s;
+}
+.card p:nth-child(29) *,
+.card h1:nth-child(29) *,
+.card h2:nth-child(29) *,
+.card h3:nth-child(29) *,
+.card h4:nth-child(29) *,
+.card h5:nth-child(29) *,
+.card h6:nth-child(29) *,
+.card div:nth-child(29) * {
+	animation-duration: 13.16667s;
+}
+.card p:nth-child(30),
+.card h1:nth-child(30),
+.card h2:nth-child(30),
+.card h3:nth-child(30),
+.card h4:nth-child(30),
+.card h5:nth-child(30),
+.card h6:nth-child(30),
+.card div:nth-child(30) {
+	animation-duration: 13.5s;
+}
+.card p:nth-child(30) *,
+.card h1:nth-child(30) *,
+.card h2:nth-child(30) *,
+.card h3:nth-child(30) *,
+.card h4:nth-child(30) *,
+.card h5:nth-child(30) *,
+.card h6:nth-child(30) *,
+.card div:nth-child(30) * {
+	animation-duration: 13.5s;
+}
+.card p:nth-child(31),
+.card h1:nth-child(31),
+.card h2:nth-child(31),
+.card h3:nth-child(31),
+.card h4:nth-child(31),
+.card h5:nth-child(31),
+.card h6:nth-child(31),
+.card div:nth-child(31) {
+	animation-duration: 13.83333s;
+}
+.card p:nth-child(31) *,
+.card h1:nth-child(31) *,
+.card h2:nth-child(31) *,
+.card h3:nth-child(31) *,
+.card h4:nth-child(31) *,
+.card h5:nth-child(31) *,
+.card h6:nth-child(31) *,
+.card div:nth-child(31) * {
+	animation-duration: 13.83333s;
+}
+.card p:nth-child(32),
+.card h1:nth-child(32),
+.card h2:nth-child(32),
+.card h3:nth-child(32),
+.card h4:nth-child(32),
+.card h5:nth-child(32),
+.card h6:nth-child(32),
+.card div:nth-child(32) {
+	animation-duration: 14.16667s;
+}
+.card p:nth-child(32) *,
+.card h1:nth-child(32) *,
+.card h2:nth-child(32) *,
+.card h3:nth-child(32) *,
+.card h4:nth-child(32) *,
+.card h5:nth-child(32) *,
+.card h6:nth-child(32) *,
+.card div:nth-child(32) * {
+	animation-duration: 14.16667s;
+}
+.card p:nth-child(33),
+.card h1:nth-child(33),
+.card h2:nth-child(33),
+.card h3:nth-child(33),
+.card h4:nth-child(33),
+.card h5:nth-child(33),
+.card h6:nth-child(33),
+.card div:nth-child(33) {
+	animation-duration: 14.5s;
+}
+.card p:nth-child(33) *,
+.card h1:nth-child(33) *,
+.card h2:nth-child(33) *,
+.card h3:nth-child(33) *,
+.card h4:nth-child(33) *,
+.card h5:nth-child(33) *,
+.card h6:nth-child(33) *,
+.card div:nth-child(33) * {
+	animation-duration: 14.5s;
+}
+.card p:nth-child(34),
+.card h1:nth-child(34),
+.card h2:nth-child(34),
+.card h3:nth-child(34),
+.card h4:nth-child(34),
+.card h5:nth-child(34),
+.card h6:nth-child(34),
+.card div:nth-child(34) {
+	animation-duration: 14.83333s;
+}
+.card p:nth-child(34) *,
+.card h1:nth-child(34) *,
+.card h2:nth-child(34) *,
+.card h3:nth-child(34) *,
+.card h4:nth-child(34) *,
+.card h5:nth-child(34) *,
+.card h6:nth-child(34) *,
+.card div:nth-child(34) * {
+	animation-duration: 14.83333s;
+}
+.card p:nth-child(35),
+.card h1:nth-child(35),
+.card h2:nth-child(35),
+.card h3:nth-child(35),
+.card h4:nth-child(35),
+.card h5:nth-child(35),
+.card h6:nth-child(35),
+.card div:nth-child(35) {
+	animation-duration: 15.16667s;
+}
+.card p:nth-child(35) *,
+.card h1:nth-child(35) *,
+.card h2:nth-child(35) *,
+.card h3:nth-child(35) *,
+.card h4:nth-child(35) *,
+.card h5:nth-child(35) *,
+.card h6:nth-child(35) *,
+.card div:nth-child(35) * {
+	animation-duration: 15.16667s;
+}
+.card p:nth-child(36),
+.card h1:nth-child(36),
+.card h2:nth-child(36),
+.card h3:nth-child(36),
+.card h4:nth-child(36),
+.card h5:nth-child(36),
+.card h6:nth-child(36),
+.card div:nth-child(36) {
+	animation-duration: 15.5s;
+}
+.card p:nth-child(36) *,
+.card h1:nth-child(36) *,
+.card h2:nth-child(36) *,
+.card h3:nth-child(36) *,
+.card h4:nth-child(36) *,
+.card h5:nth-child(36) *,
+.card h6:nth-child(36) *,
+.card div:nth-child(36) * {
+	animation-duration: 15.5s;
+}
+.card p:nth-child(37),
+.card h1:nth-child(37),
+.card h2:nth-child(37),
+.card h3:nth-child(37),
+.card h4:nth-child(37),
+.card h5:nth-child(37),
+.card h6:nth-child(37),
+.card div:nth-child(37) {
+	animation-duration: 15.83333s;
+}
+.card p:nth-child(37) *,
+.card h1:nth-child(37) *,
+.card h2:nth-child(37) *,
+.card h3:nth-child(37) *,
+.card h4:nth-child(37) *,
+.card h5:nth-child(37) *,
+.card h6:nth-child(37) *,
+.card div:nth-child(37) * {
+	animation-duration: 15.83333s;
+}
+.card p:nth-child(38),
+.card h1:nth-child(38),
+.card h2:nth-child(38),
+.card h3:nth-child(38),
+.card h4:nth-child(38),
+.card h5:nth-child(38),
+.card h6:nth-child(38),
+.card div:nth-child(38) {
+	animation-duration: 16.16667s;
+}
+.card p:nth-child(38) *,
+.card h1:nth-child(38) *,
+.card h2:nth-child(38) *,
+.card h3:nth-child(38) *,
+.card h4:nth-child(38) *,
+.card h5:nth-child(38) *,
+.card h6:nth-child(38) *,
+.card div:nth-child(38) * {
+	animation-duration: 16.16667s;
+}
+.card p:nth-child(39),
+.card h1:nth-child(39),
+.card h2:nth-child(39),
+.card h3:nth-child(39),
+.card h4:nth-child(39),
+.card h5:nth-child(39),
+.card h6:nth-child(39),
+.card div:nth-child(39) {
+	animation-duration: 16.5s;
+}
+.card p:nth-child(39) *,
+.card h1:nth-child(39) *,
+.card h2:nth-child(39) *,
+.card h3:nth-child(39) *,
+.card h4:nth-child(39) *,
+.card h5:nth-child(39) *,
+.card h6:nth-child(39) *,
+.card div:nth-child(39) * {
+	animation-duration: 16.5s;
+}
+.card p:nth-child(40),
+.card h1:nth-child(40),
+.card h2:nth-child(40),
+.card h3:nth-child(40),
+.card h4:nth-child(40),
+.card h5:nth-child(40),
+.card h6:nth-child(40),
+.card div:nth-child(40) {
+	animation-duration: 16.83333s;
+}
+.card p:nth-child(40) *,
+.card h1:nth-child(40) *,
+.card h2:nth-child(40) *,
+.card h3:nth-child(40) *,
+.card h4:nth-child(40) *,
+.card h5:nth-child(40) *,
+.card h6:nth-child(40) *,
+.card div:nth-child(40) * {
+	animation-duration: 16.83333s;
+}
+.card p:nth-child(41),
+.card h1:nth-child(41),
+.card h2:nth-child(41),
+.card h3:nth-child(41),
+.card h4:nth-child(41),
+.card h5:nth-child(41),
+.card h6:nth-child(41),
+.card div:nth-child(41) {
+	animation-duration: 17.16667s;
+}
+.card p:nth-child(41) *,
+.card h1:nth-child(41) *,
+.card h2:nth-child(41) *,
+.card h3:nth-child(41) *,
+.card h4:nth-child(41) *,
+.card h5:nth-child(41) *,
+.card h6:nth-child(41) *,
+.card div:nth-child(41) * {
+	animation-duration: 17.16667s;
+}
+.card p:nth-child(42),
+.card h1:nth-child(42),
+.card h2:nth-child(42),
+.card h3:nth-child(42),
+.card h4:nth-child(42),
+.card h5:nth-child(42),
+.card h6:nth-child(42),
+.card div:nth-child(42) {
+	animation-duration: 17.5s;
+}
+.card p:nth-child(42) *,
+.card h1:nth-child(42) *,
+.card h2:nth-child(42) *,
+.card h3:nth-child(42) *,
+.card h4:nth-child(42) *,
+.card h5:nth-child(42) *,
+.card h6:nth-child(42) *,
+.card div:nth-child(42) * {
+	animation-duration: 17.5s;
+}
+.card p:nth-child(43),
+.card h1:nth-child(43),
+.card h2:nth-child(43),
+.card h3:nth-child(43),
+.card h4:nth-child(43),
+.card h5:nth-child(43),
+.card h6:nth-child(43),
+.card div:nth-child(43) {
+	animation-duration: 17.83333s;
+}
+.card p:nth-child(43) *,
+.card h1:nth-child(43) *,
+.card h2:nth-child(43) *,
+.card h3:nth-child(43) *,
+.card h4:nth-child(43) *,
+.card h5:nth-child(43) *,
+.card h6:nth-child(43) *,
+.card div:nth-child(43) * {
+	animation-duration: 17.83333s;
+}
+.card p:nth-child(44),
+.card h1:nth-child(44),
+.card h2:nth-child(44),
+.card h3:nth-child(44),
+.card h4:nth-child(44),
+.card h5:nth-child(44),
+.card h6:nth-child(44),
+.card div:nth-child(44) {
+	animation-duration: 18.16667s;
+}
+.card p:nth-child(44) *,
+.card h1:nth-child(44) *,
+.card h2:nth-child(44) *,
+.card h3:nth-child(44) *,
+.card h4:nth-child(44) *,
+.card h5:nth-child(44) *,
+.card h6:nth-child(44) *,
+.card div:nth-child(44) * {
+	animation-duration: 18.16667s;
+}
+.card p:nth-child(45),
+.card h1:nth-child(45),
+.card h2:nth-child(45),
+.card h3:nth-child(45),
+.card h4:nth-child(45),
+.card h5:nth-child(45),
+.card h6:nth-child(45),
+.card div:nth-child(45) {
+	animation-duration: 18.5s;
+}
+.card p:nth-child(45) *,
+.card h1:nth-child(45) *,
+.card h2:nth-child(45) *,
+.card h3:nth-child(45) *,
+.card h4:nth-child(45) *,
+.card h5:nth-child(45) *,
+.card h6:nth-child(45) *,
+.card div:nth-child(45) * {
+	animation-duration: 18.5s;
+}
+.card p:nth-child(46),
+.card h1:nth-child(46),
+.card h2:nth-child(46),
+.card h3:nth-child(46),
+.card h4:nth-child(46),
+.card h5:nth-child(46),
+.card h6:nth-child(46),
+.card div:nth-child(46) {
+	animation-duration: 18.83333s;
+}
+.card p:nth-child(46) *,
+.card h1:nth-child(46) *,
+.card h2:nth-child(46) *,
+.card h3:nth-child(46) *,
+.card h4:nth-child(46) *,
+.card h5:nth-child(46) *,
+.card h6:nth-child(46) *,
+.card div:nth-child(46) * {
+	animation-duration: 18.83333s;
+}
+.card p:nth-child(47),
+.card h1:nth-child(47),
+.card h2:nth-child(47),
+.card h3:nth-child(47),
+.card h4:nth-child(47),
+.card h5:nth-child(47),
+.card h6:nth-child(47),
+.card div:nth-child(47) {
+	animation-duration: 19.16667s;
+}
+.card p:nth-child(47) *,
+.card h1:nth-child(47) *,
+.card h2:nth-child(47) *,
+.card h3:nth-child(47) *,
+.card h4:nth-child(47) *,
+.card h5:nth-child(47) *,
+.card h6:nth-child(47) *,
+.card div:nth-child(47) * {
+	animation-duration: 19.16667s;
+}
+.card p:nth-child(48),
+.card h1:nth-child(48),
+.card h2:nth-child(48),
+.card h3:nth-child(48),
+.card h4:nth-child(48),
+.card h5:nth-child(48),
+.card h6:nth-child(48),
+.card div:nth-child(48) {
+	animation-duration: 19.5s;
+}
+.card p:nth-child(48) *,
+.card h1:nth-child(48) *,
+.card h2:nth-child(48) *,
+.card h3:nth-child(48) *,
+.card h4:nth-child(48) *,
+.card h5:nth-child(48) *,
+.card h6:nth-child(48) *,
+.card div:nth-child(48) * {
+	animation-duration: 19.5s;
+}
+.card p:nth-child(49),
+.card h1:nth-child(49),
+.card h2:nth-child(49),
+.card h3:nth-child(49),
+.card h4:nth-child(49),
+.card h5:nth-child(49),
+.card h6:nth-child(49),
+.card div:nth-child(49) {
+	animation-duration: 19.83333s;
+}
+.card p:nth-child(49) *,
+.card h1:nth-child(49) *,
+.card h2:nth-child(49) *,
+.card h3:nth-child(49) *,
+.card h4:nth-child(49) *,
+.card h5:nth-child(49) *,
+.card h6:nth-child(49) *,
+.card div:nth-child(49) * {
+	animation-duration: 19.83333s;
+}
+.card p:nth-child(50),
+.card h1:nth-child(50),
+.card h2:nth-child(50),
+.card h3:nth-child(50),
+.card h4:nth-child(50),
+.card h5:nth-child(50),
+.card h6:nth-child(50),
+.card div:nth-child(50) {
+	animation-duration: 20.16667s;
+}
+.card p:nth-child(50) *,
+.card h1:nth-child(50) *,
+.card h2:nth-child(50) *,
+.card h3:nth-child(50) *,
+.card h4:nth-child(50) *,
+.card h5:nth-child(50) *,
+.card h6:nth-child(50) *,
+.card div:nth-child(50) * {
+	animation-duration: 20.16667s;
+}
+.card p:nth-child(51),
+.card h1:nth-child(51),
+.card h2:nth-child(51),
+.card h3:nth-child(51),
+.card h4:nth-child(51),
+.card h5:nth-child(51),
+.card h6:nth-child(51),
+.card div:nth-child(51) {
+	animation-duration: 20.5s;
+}
+.card p:nth-child(51) *,
+.card h1:nth-child(51) *,
+.card h2:nth-child(51) *,
+.card h3:nth-child(51) *,
+.card h4:nth-child(51) *,
+.card h5:nth-child(51) *,
+.card h6:nth-child(51) *,
+.card div:nth-child(51) * {
+	animation-duration: 20.5s;
+}
+.card p:nth-child(52),
+.card h1:nth-child(52),
+.card h2:nth-child(52),
+.card h3:nth-child(52),
+.card h4:nth-child(52),
+.card h5:nth-child(52),
+.card h6:nth-child(52),
+.card div:nth-child(52) {
+	animation-duration: 20.83333s;
+}
+.card p:nth-child(52) *,
+.card h1:nth-child(52) *,
+.card h2:nth-child(52) *,
+.card h3:nth-child(52) *,
+.card h4:nth-child(52) *,
+.card h5:nth-child(52) *,
+.card h6:nth-child(52) *,
+.card div:nth-child(52) * {
+	animation-duration: 20.83333s;
+}
+.card p:nth-child(53),
+.card h1:nth-child(53),
+.card h2:nth-child(53),
+.card h3:nth-child(53),
+.card h4:nth-child(53),
+.card h5:nth-child(53),
+.card h6:nth-child(53),
+.card div:nth-child(53) {
+	animation-duration: 21.16667s;
+}
+.card p:nth-child(53) *,
+.card h1:nth-child(53) *,
+.card h2:nth-child(53) *,
+.card h3:nth-child(53) *,
+.card h4:nth-child(53) *,
+.card h5:nth-child(53) *,
+.card h6:nth-child(53) *,
+.card div:nth-child(53) * {
+	animation-duration: 21.16667s;
+}
+.card p:nth-child(54),
+.card h1:nth-child(54),
+.card h2:nth-child(54),
+.card h3:nth-child(54),
+.card h4:nth-child(54),
+.card h5:nth-child(54),
+.card h6:nth-child(54),
+.card div:nth-child(54) {
+	animation-duration: 21.5s;
+}
+.card p:nth-child(54) *,
+.card h1:nth-child(54) *,
+.card h2:nth-child(54) *,
+.card h3:nth-child(54) *,
+.card h4:nth-child(54) *,
+.card h5:nth-child(54) *,
+.card h6:nth-child(54) *,
+.card div:nth-child(54) * {
+	animation-duration: 21.5s;
+}
+.card p:nth-child(55),
+.card h1:nth-child(55),
+.card h2:nth-child(55),
+.card h3:nth-child(55),
+.card h4:nth-child(55),
+.card h5:nth-child(55),
+.card h6:nth-child(55),
+.card div:nth-child(55) {
+	animation-duration: 21.83333s;
+}
+.card p:nth-child(55) *,
+.card h1:nth-child(55) *,
+.card h2:nth-child(55) *,
+.card h3:nth-child(55) *,
+.card h4:nth-child(55) *,
+.card h5:nth-child(55) *,
+.card h6:nth-child(55) *,
+.card div:nth-child(55) * {
+	animation-duration: 21.83333s;
+}
+.card p:nth-child(56),
+.card h1:nth-child(56),
+.card h2:nth-child(56),
+.card h3:nth-child(56),
+.card h4:nth-child(56),
+.card h5:nth-child(56),
+.card h6:nth-child(56),
+.card div:nth-child(56) {
+	animation-duration: 22.16667s;
+}
+.card p:nth-child(56) *,
+.card h1:nth-child(56) *,
+.card h2:nth-child(56) *,
+.card h3:nth-child(56) *,
+.card h4:nth-child(56) *,
+.card h5:nth-child(56) *,
+.card h6:nth-child(56) *,
+.card div:nth-child(56) * {
+	animation-duration: 22.16667s;
+}
+.card p:nth-child(57),
+.card h1:nth-child(57),
+.card h2:nth-child(57),
+.card h3:nth-child(57),
+.card h4:nth-child(57),
+.card h5:nth-child(57),
+.card h6:nth-child(57),
+.card div:nth-child(57) {
+	animation-duration: 22.5s;
+}
+.card p:nth-child(57) *,
+.card h1:nth-child(57) *,
+.card h2:nth-child(57) *,
+.card h3:nth-child(57) *,
+.card h4:nth-child(57) *,
+.card h5:nth-child(57) *,
+.card h6:nth-child(57) *,
+.card div:nth-child(57) * {
+	animation-duration: 22.5s;
+}
+.card p:nth-child(58),
+.card h1:nth-child(58),
+.card h2:nth-child(58),
+.card h3:nth-child(58),
+.card h4:nth-child(58),
+.card h5:nth-child(58),
+.card h6:nth-child(58),
+.card div:nth-child(58) {
+	animation-duration: 22.83333s;
+}
+.card p:nth-child(58) *,
+.card h1:nth-child(58) *,
+.card h2:nth-child(58) *,
+.card h3:nth-child(58) *,
+.card h4:nth-child(58) *,
+.card h5:nth-child(58) *,
+.card h6:nth-child(58) *,
+.card div:nth-child(58) * {
+	animation-duration: 22.83333s;
+}
+.card p:nth-child(59),
+.card h1:nth-child(59),
+.card h2:nth-child(59),
+.card h3:nth-child(59),
+.card h4:nth-child(59),
+.card h5:nth-child(59),
+.card h6:nth-child(59),
+.card div:nth-child(59) {
+	animation-duration: 23.16667s;
+}
+.card p:nth-child(59) *,
+.card h1:nth-child(59) *,
+.card h2:nth-child(59) *,
+.card h3:nth-child(59) *,
+.card h4:nth-child(59) *,
+.card h5:nth-child(59) *,
+.card h6:nth-child(59) *,
+.card div:nth-child(59) * {
+	animation-duration: 23.16667s;
+}
+.card p:nth-child(60),
+.card h1:nth-child(60),
+.card h2:nth-child(60),
+.card h3:nth-child(60),
+.card h4:nth-child(60),
+.card h5:nth-child(60),
+.card h6:nth-child(60),
+.card div:nth-child(60) {
+	animation-duration: 23.5s;
+}
+.card p:nth-child(60) *,
+.card h1:nth-child(60) *,
+.card h2:nth-child(60) *,
+.card h3:nth-child(60) *,
+.card h4:nth-child(60) *,
+.card h5:nth-child(60) *,
+.card h6:nth-child(60) *,
+.card div:nth-child(60) * {
+	animation-duration: 23.5s;
+}
+.card p:nth-child(61),
+.card h1:nth-child(61),
+.card h2:nth-child(61),
+.card h3:nth-child(61),
+.card h4:nth-child(61),
+.card h5:nth-child(61),
+.card h6:nth-child(61),
+.card div:nth-child(61) {
+	animation-duration: 23.83333s;
+}
+.card p:nth-child(61) *,
+.card h1:nth-child(61) *,
+.card h2:nth-child(61) *,
+.card h3:nth-child(61) *,
+.card h4:nth-child(61) *,
+.card h5:nth-child(61) *,
+.card h6:nth-child(61) *,
+.card div:nth-child(61) * {
+	animation-duration: 23.83333s;
+}
+.card p:nth-child(62),
+.card h1:nth-child(62),
+.card h2:nth-child(62),
+.card h3:nth-child(62),
+.card h4:nth-child(62),
+.card h5:nth-child(62),
+.card h6:nth-child(62),
+.card div:nth-child(62) {
+	animation-duration: 24.16667s;
+}
+.card p:nth-child(62) *,
+.card h1:nth-child(62) *,
+.card h2:nth-child(62) *,
+.card h3:nth-child(62) *,
+.card h4:nth-child(62) *,
+.card h5:nth-child(62) *,
+.card h6:nth-child(62) *,
+.card div:nth-child(62) * {
+	animation-duration: 24.16667s;
+}
+.card p:nth-child(63),
+.card h1:nth-child(63),
+.card h2:nth-child(63),
+.card h3:nth-child(63),
+.card h4:nth-child(63),
+.card h5:nth-child(63),
+.card h6:nth-child(63),
+.card div:nth-child(63) {
+	animation-duration: 24.5s;
+}
+.card p:nth-child(63) *,
+.card h1:nth-child(63) *,
+.card h2:nth-child(63) *,
+.card h3:nth-child(63) *,
+.card h4:nth-child(63) *,
+.card h5:nth-child(63) *,
+.card h6:nth-child(63) *,
+.card div:nth-child(63) * {
+	animation-duration: 24.5s;
+}
+.card p:nth-child(64),
+.card h1:nth-child(64),
+.card h2:nth-child(64),
+.card h3:nth-child(64),
+.card h4:nth-child(64),
+.card h5:nth-child(64),
+.card h6:nth-child(64),
+.card div:nth-child(64) {
+	animation-duration: 24.83333s;
+}
+.card p:nth-child(64) *,
+.card h1:nth-child(64) *,
+.card h2:nth-child(64) *,
+.card h3:nth-child(64) *,
+.card h4:nth-child(64) *,
+.card h5:nth-child(64) *,
+.card h6:nth-child(64) *,
+.card div:nth-child(64) * {
+	animation-duration: 24.83333s;
+}
+.card p:nth-child(65),
+.card h1:nth-child(65),
+.card h2:nth-child(65),
+.card h3:nth-child(65),
+.card h4:nth-child(65),
+.card h5:nth-child(65),
+.card h6:nth-child(65),
+.card div:nth-child(65) {
+	animation-duration: 25.16667s;
+}
+.card p:nth-child(65) *,
+.card h1:nth-child(65) *,
+.card h2:nth-child(65) *,
+.card h3:nth-child(65) *,
+.card h4:nth-child(65) *,
+.card h5:nth-child(65) *,
+.card h6:nth-child(65) *,
+.card div:nth-child(65) * {
+	animation-duration: 25.16667s;
+}
+.card p:nth-child(66),
+.card h1:nth-child(66),
+.card h2:nth-child(66),
+.card h3:nth-child(66),
+.card h4:nth-child(66),
+.card h5:nth-child(66),
+.card h6:nth-child(66),
+.card div:nth-child(66) {
+	animation-duration: 25.5s;
+}
+.card p:nth-child(66) *,
+.card h1:nth-child(66) *,
+.card h2:nth-child(66) *,
+.card h3:nth-child(66) *,
+.card h4:nth-child(66) *,
+.card h5:nth-child(66) *,
+.card h6:nth-child(66) *,
+.card div:nth-child(66) * {
+	animation-duration: 25.5s;
+}
+.card p:nth-child(67),
+.card h1:nth-child(67),
+.card h2:nth-child(67),
+.card h3:nth-child(67),
+.card h4:nth-child(67),
+.card h5:nth-child(67),
+.card h6:nth-child(67),
+.card div:nth-child(67) {
+	animation-duration: 25.83333s;
+}
+.card p:nth-child(67) *,
+.card h1:nth-child(67) *,
+.card h2:nth-child(67) *,
+.card h3:nth-child(67) *,
+.card h4:nth-child(67) *,
+.card h5:nth-child(67) *,
+.card h6:nth-child(67) *,
+.card div:nth-child(67) * {
+	animation-duration: 25.83333s;
+}
+.card p:nth-child(68),
+.card h1:nth-child(68),
+.card h2:nth-child(68),
+.card h3:nth-child(68),
+.card h4:nth-child(68),
+.card h5:nth-child(68),
+.card h6:nth-child(68),
+.card div:nth-child(68) {
+	animation-duration: 26.16667s;
+}
+.card p:nth-child(68) *,
+.card h1:nth-child(68) *,
+.card h2:nth-child(68) *,
+.card h3:nth-child(68) *,
+.card h4:nth-child(68) *,
+.card h5:nth-child(68) *,
+.card h6:nth-child(68) *,
+.card div:nth-child(68) * {
+	animation-duration: 26.16667s;
+}
+.card p:nth-child(69),
+.card h1:nth-child(69),
+.card h2:nth-child(69),
+.card h3:nth-child(69),
+.card h4:nth-child(69),
+.card h5:nth-child(69),
+.card h6:nth-child(69),
+.card div:nth-child(69) {
+	animation-duration: 26.5s;
+}
+.card p:nth-child(69) *,
+.card h1:nth-child(69) *,
+.card h2:nth-child(69) *,
+.card h3:nth-child(69) *,
+.card h4:nth-child(69) *,
+.card h5:nth-child(69) *,
+.card h6:nth-child(69) *,
+.card div:nth-child(69) * {
+	animation-duration: 26.5s;
+}
+.card p:nth-child(70),
+.card h1:nth-child(70),
+.card h2:nth-child(70),
+.card h3:nth-child(70),
+.card h4:nth-child(70),
+.card h5:nth-child(70),
+.card h6:nth-child(70),
+.card div:nth-child(70) {
+	animation-duration: 26.83333s;
+}
+.card p:nth-child(70) *,
+.card h1:nth-child(70) *,
+.card h2:nth-child(70) *,
+.card h3:nth-child(70) *,
+.card h4:nth-child(70) *,
+.card h5:nth-child(70) *,
+.card h6:nth-child(70) *,
+.card div:nth-child(70) * {
+	animation-duration: 26.83333s;
+}
+.card p:nth-child(71),
+.card h1:nth-child(71),
+.card h2:nth-child(71),
+.card h3:nth-child(71),
+.card h4:nth-child(71),
+.card h5:nth-child(71),
+.card h6:nth-child(71),
+.card div:nth-child(71) {
+	animation-duration: 27.16667s;
+}
+.card p:nth-child(71) *,
+.card h1:nth-child(71) *,
+.card h2:nth-child(71) *,
+.card h3:nth-child(71) *,
+.card h4:nth-child(71) *,
+.card h5:nth-child(71) *,
+.card h6:nth-child(71) *,
+.card div:nth-child(71) * {
+	animation-duration: 27.16667s;
+}
+.card p:nth-child(72),
+.card h1:nth-child(72),
+.card h2:nth-child(72),
+.card h3:nth-child(72),
+.card h4:nth-child(72),
+.card h5:nth-child(72),
+.card h6:nth-child(72),
+.card div:nth-child(72) {
+	animation-duration: 27.5s;
+}
+.card p:nth-child(72) *,
+.card h1:nth-child(72) *,
+.card h2:nth-child(72) *,
+.card h3:nth-child(72) *,
+.card h4:nth-child(72) *,
+.card h5:nth-child(72) *,
+.card h6:nth-child(72) *,
+.card div:nth-child(72) * {
+	animation-duration: 27.5s;
+}
+.card p:nth-child(73),
+.card h1:nth-child(73),
+.card h2:nth-child(73),
+.card h3:nth-child(73),
+.card h4:nth-child(73),
+.card h5:nth-child(73),
+.card h6:nth-child(73),
+.card div:nth-child(73) {
+	animation-duration: 27.83333s;
+}
+.card p:nth-child(73) *,
+.card h1:nth-child(73) *,
+.card h2:nth-child(73) *,
+.card h3:nth-child(73) *,
+.card h4:nth-child(73) *,
+.card h5:nth-child(73) *,
+.card h6:nth-child(73) *,
+.card div:nth-child(73) * {
+	animation-duration: 27.83333s;
+}
+.card p:nth-child(74),
+.card h1:nth-child(74),
+.card h2:nth-child(74),
+.card h3:nth-child(74),
+.card h4:nth-child(74),
+.card h5:nth-child(74),
+.card h6:nth-child(74),
+.card div:nth-child(74) {
+	animation-duration: 28.16667s;
+}
+.card p:nth-child(74) *,
+.card h1:nth-child(74) *,
+.card h2:nth-child(74) *,
+.card h3:nth-child(74) *,
+.card h4:nth-child(74) *,
+.card h5:nth-child(74) *,
+.card h6:nth-child(74) *,
+.card div:nth-child(74) * {
+	animation-duration: 28.16667s;
+}
+.card p:nth-child(75),
+.card h1:nth-child(75),
+.card h2:nth-child(75),
+.card h3:nth-child(75),
+.card h4:nth-child(75),
+.card h5:nth-child(75),
+.card h6:nth-child(75),
+.card div:nth-child(75) {
+	animation-duration: 28.5s;
+}
+.card p:nth-child(75) *,
+.card h1:nth-child(75) *,
+.card h2:nth-child(75) *,
+.card h3:nth-child(75) *,
+.card h4:nth-child(75) *,
+.card h5:nth-child(75) *,
+.card h6:nth-child(75) *,
+.card div:nth-child(75) * {
+	animation-duration: 28.5s;
+}
+.card p:nth-child(76),
+.card h1:nth-child(76),
+.card h2:nth-child(76),
+.card h3:nth-child(76),
+.card h4:nth-child(76),
+.card h5:nth-child(76),
+.card h6:nth-child(76),
+.card div:nth-child(76) {
+	animation-duration: 28.83333s;
+}
+.card p:nth-child(76) *,
+.card h1:nth-child(76) *,
+.card h2:nth-child(76) *,
+.card h3:nth-child(76) *,
+.card h4:nth-child(76) *,
+.card h5:nth-child(76) *,
+.card h6:nth-child(76) *,
+.card div:nth-child(76) * {
+	animation-duration: 28.83333s;
+}
+.card p:nth-child(77),
+.card h1:nth-child(77),
+.card h2:nth-child(77),
+.card h3:nth-child(77),
+.card h4:nth-child(77),
+.card h5:nth-child(77),
+.card h6:nth-child(77),
+.card div:nth-child(77) {
+	animation-duration: 29.16667s;
+}
+.card p:nth-child(77) *,
+.card h1:nth-child(77) *,
+.card h2:nth-child(77) *,
+.card h3:nth-child(77) *,
+.card h4:nth-child(77) *,
+.card h5:nth-child(77) *,
+.card h6:nth-child(77) *,
+.card div:nth-child(77) * {
+	animation-duration: 29.16667s;
+}
+.card p:nth-child(78),
+.card h1:nth-child(78),
+.card h2:nth-child(78),
+.card h3:nth-child(78),
+.card h4:nth-child(78),
+.card h5:nth-child(78),
+.card h6:nth-child(78),
+.card div:nth-child(78) {
+	animation-duration: 29.5s;
+}
+.card p:nth-child(78) *,
+.card h1:nth-child(78) *,
+.card h2:nth-child(78) *,
+.card h3:nth-child(78) *,
+.card h4:nth-child(78) *,
+.card h5:nth-child(78) *,
+.card h6:nth-child(78) *,
+.card div:nth-child(78) * {
+	animation-duration: 29.5s;
+}
+.card p:nth-child(79),
+.card h1:nth-child(79),
+.card h2:nth-child(79),
+.card h3:nth-child(79),
+.card h4:nth-child(79),
+.card h5:nth-child(79),
+.card h6:nth-child(79),
+.card div:nth-child(79) {
+	animation-duration: 29.83333s;
+}
+.card p:nth-child(79) *,
+.card h1:nth-child(79) *,
+.card h2:nth-child(79) *,
+.card h3:nth-child(79) *,
+.card h4:nth-child(79) *,
+.card h5:nth-child(79) *,
+.card h6:nth-child(79) *,
+.card div:nth-child(79) * {
+	animation-duration: 29.83333s;
+}
+.card p:nth-child(80),
+.card h1:nth-child(80),
+.card h2:nth-child(80),
+.card h3:nth-child(80),
+.card h4:nth-child(80),
+.card h5:nth-child(80),
+.card h6:nth-child(80),
+.card div:nth-child(80) {
+	animation-duration: 30.16667s;
+}
+.card p:nth-child(80) *,
+.card h1:nth-child(80) *,
+.card h2:nth-child(80) *,
+.card h3:nth-child(80) *,
+.card h4:nth-child(80) *,
+.card h5:nth-child(80) *,
+.card h6:nth-child(80) *,
+.card div:nth-child(80) * {
+	animation-duration: 30.16667s;
+}
+.card p:nth-child(81),
+.card h1:nth-child(81),
+.card h2:nth-child(81),
+.card h3:nth-child(81),
+.card h4:nth-child(81),
+.card h5:nth-child(81),
+.card h6:nth-child(81),
+.card div:nth-child(81) {
+	animation-duration: 30.5s;
+}
+.card p:nth-child(81) *,
+.card h1:nth-child(81) *,
+.card h2:nth-child(81) *,
+.card h3:nth-child(81) *,
+.card h4:nth-child(81) *,
+.card h5:nth-child(81) *,
+.card h6:nth-child(81) *,
+.card div:nth-child(81) * {
+	animation-duration: 30.5s;
+}
+.card p:nth-child(82),
+.card h1:nth-child(82),
+.card h2:nth-child(82),
+.card h3:nth-child(82),
+.card h4:nth-child(82),
+.card h5:nth-child(82),
+.card h6:nth-child(82),
+.card div:nth-child(82) {
+	animation-duration: 30.83333s;
+}
+.card p:nth-child(82) *,
+.card h1:nth-child(82) *,
+.card h2:nth-child(82) *,
+.card h3:nth-child(82) *,
+.card h4:nth-child(82) *,
+.card h5:nth-child(82) *,
+.card h6:nth-child(82) *,
+.card div:nth-child(82) * {
+	animation-duration: 30.83333s;
+}
+.card p:nth-child(83),
+.card h1:nth-child(83),
+.card h2:nth-child(83),
+.card h3:nth-child(83),
+.card h4:nth-child(83),
+.card h5:nth-child(83),
+.card h6:nth-child(83),
+.card div:nth-child(83) {
+	animation-duration: 31.16667s;
+}
+.card p:nth-child(83) *,
+.card h1:nth-child(83) *,
+.card h2:nth-child(83) *,
+.card h3:nth-child(83) *,
+.card h4:nth-child(83) *,
+.card h5:nth-child(83) *,
+.card h6:nth-child(83) *,
+.card div:nth-child(83) * {
+	animation-duration: 31.16667s;
+}
+.card p:nth-child(84),
+.card h1:nth-child(84),
+.card h2:nth-child(84),
+.card h3:nth-child(84),
+.card h4:nth-child(84),
+.card h5:nth-child(84),
+.card h6:nth-child(84),
+.card div:nth-child(84) {
+	animation-duration: 31.5s;
+}
+.card p:nth-child(84) *,
+.card h1:nth-child(84) *,
+.card h2:nth-child(84) *,
+.card h3:nth-child(84) *,
+.card h4:nth-child(84) *,
+.card h5:nth-child(84) *,
+.card h6:nth-child(84) *,
+.card div:nth-child(84) * {
+	animation-duration: 31.5s;
+}
+.card p:nth-child(85),
+.card h1:nth-child(85),
+.card h2:nth-child(85),
+.card h3:nth-child(85),
+.card h4:nth-child(85),
+.card h5:nth-child(85),
+.card h6:nth-child(85),
+.card div:nth-child(85) {
+	animation-duration: 31.83333s;
+}
+.card p:nth-child(85) *,
+.card h1:nth-child(85) *,
+.card h2:nth-child(85) *,
+.card h3:nth-child(85) *,
+.card h4:nth-child(85) *,
+.card h5:nth-child(85) *,
+.card h6:nth-child(85) *,
+.card div:nth-child(85) * {
+	animation-duration: 31.83333s;
+}
+.card p:nth-child(86),
+.card h1:nth-child(86),
+.card h2:nth-child(86),
+.card h3:nth-child(86),
+.card h4:nth-child(86),
+.card h5:nth-child(86),
+.card h6:nth-child(86),
+.card div:nth-child(86) {
+	animation-duration: 32.16667s;
+}
+.card p:nth-child(86) *,
+.card h1:nth-child(86) *,
+.card h2:nth-child(86) *,
+.card h3:nth-child(86) *,
+.card h4:nth-child(86) *,
+.card h5:nth-child(86) *,
+.card h6:nth-child(86) *,
+.card div:nth-child(86) * {
+	animation-duration: 32.16667s;
+}
+.card p:nth-child(87),
+.card h1:nth-child(87),
+.card h2:nth-child(87),
+.card h3:nth-child(87),
+.card h4:nth-child(87),
+.card h5:nth-child(87),
+.card h6:nth-child(87),
+.card div:nth-child(87) {
+	animation-duration: 32.5s;
+}
+.card p:nth-child(87) *,
+.card h1:nth-child(87) *,
+.card h2:nth-child(87) *,
+.card h3:nth-child(87) *,
+.card h4:nth-child(87) *,
+.card h5:nth-child(87) *,
+.card h6:nth-child(87) *,
+.card div:nth-child(87) * {
+	animation-duration: 32.5s;
+}
+.card p:nth-child(88),
+.card h1:nth-child(88),
+.card h2:nth-child(88),
+.card h3:nth-child(88),
+.card h4:nth-child(88),
+.card h5:nth-child(88),
+.card h6:nth-child(88),
+.card div:nth-child(88) {
+	animation-duration: 32.83333s;
+}
+.card p:nth-child(88) *,
+.card h1:nth-child(88) *,
+.card h2:nth-child(88) *,
+.card h3:nth-child(88) *,
+.card h4:nth-child(88) *,
+.card h5:nth-child(88) *,
+.card h6:nth-child(88) *,
+.card div:nth-child(88) * {
+	animation-duration: 32.83333s;
+}
+.card p:nth-child(89),
+.card h1:nth-child(89),
+.card h2:nth-child(89),
+.card h3:nth-child(89),
+.card h4:nth-child(89),
+.card h5:nth-child(89),
+.card h6:nth-child(89),
+.card div:nth-child(89) {
+	animation-duration: 33.16667s;
+}
+.card p:nth-child(89) *,
+.card h1:nth-child(89) *,
+.card h2:nth-child(89) *,
+.card h3:nth-child(89) *,
+.card h4:nth-child(89) *,
+.card h5:nth-child(89) *,
+.card h6:nth-child(89) *,
+.card div:nth-child(89) * {
+	animation-duration: 33.16667s;
+}
+.card p:nth-child(90),
+.card h1:nth-child(90),
+.card h2:nth-child(90),
+.card h3:nth-child(90),
+.card h4:nth-child(90),
+.card h5:nth-child(90),
+.card h6:nth-child(90),
+.card div:nth-child(90) {
+	animation-duration: 33.5s;
+}
+.card p:nth-child(90) *,
+.card h1:nth-child(90) *,
+.card h2:nth-child(90) *,
+.card h3:nth-child(90) *,
+.card h4:nth-child(90) *,
+.card h5:nth-child(90) *,
+.card h6:nth-child(90) *,
+.card div:nth-child(90) * {
+	animation-duration: 33.5s;
+}
+.card p:nth-child(91),
+.card h1:nth-child(91),
+.card h2:nth-child(91),
+.card h3:nth-child(91),
+.card h4:nth-child(91),
+.card h5:nth-child(91),
+.card h6:nth-child(91),
+.card div:nth-child(91) {
+	animation-duration: 33.83333s;
+}
+.card p:nth-child(91) *,
+.card h1:nth-child(91) *,
+.card h2:nth-child(91) *,
+.card h3:nth-child(91) *,
+.card h4:nth-child(91) *,
+.card h5:nth-child(91) *,
+.card h6:nth-child(91) *,
+.card div:nth-child(91) * {
+	animation-duration: 33.83333s;
+}
+.card p:nth-child(92),
+.card h1:nth-child(92),
+.card h2:nth-child(92),
+.card h3:nth-child(92),
+.card h4:nth-child(92),
+.card h5:nth-child(92),
+.card h6:nth-child(92),
+.card div:nth-child(92) {
+	animation-duration: 34.16667s;
+}
+.card p:nth-child(92) *,
+.card h1:nth-child(92) *,
+.card h2:nth-child(92) *,
+.card h3:nth-child(92) *,
+.card h4:nth-child(92) *,
+.card h5:nth-child(92) *,
+.card h6:nth-child(92) *,
+.card div:nth-child(92) * {
+	animation-duration: 34.16667s;
+}
+.card p:nth-child(93),
+.card h1:nth-child(93),
+.card h2:nth-child(93),
+.card h3:nth-child(93),
+.card h4:nth-child(93),
+.card h5:nth-child(93),
+.card h6:nth-child(93),
+.card div:nth-child(93) {
+	animation-duration: 34.5s;
+}
+.card p:nth-child(93) *,
+.card h1:nth-child(93) *,
+.card h2:nth-child(93) *,
+.card h3:nth-child(93) *,
+.card h4:nth-child(93) *,
+.card h5:nth-child(93) *,
+.card h6:nth-child(93) *,
+.card div:nth-child(93) * {
+	animation-duration: 34.5s;
+}
+.card p:nth-child(94),
+.card h1:nth-child(94),
+.card h2:nth-child(94),
+.card h3:nth-child(94),
+.card h4:nth-child(94),
+.card h5:nth-child(94),
+.card h6:nth-child(94),
+.card div:nth-child(94) {
+	animation-duration: 34.83333s;
+}
+.card p:nth-child(94) *,
+.card h1:nth-child(94) *,
+.card h2:nth-child(94) *,
+.card h3:nth-child(94) *,
+.card h4:nth-child(94) *,
+.card h5:nth-child(94) *,
+.card h6:nth-child(94) *,
+.card div:nth-child(94) * {
+	animation-duration: 34.83333s;
+}
+.card p:nth-child(95),
+.card h1:nth-child(95),
+.card h2:nth-child(95),
+.card h3:nth-child(95),
+.card h4:nth-child(95),
+.card h5:nth-child(95),
+.card h6:nth-child(95),
+.card div:nth-child(95) {
+	animation-duration: 35.16667s;
+}
+.card p:nth-child(95) *,
+.card h1:nth-child(95) *,
+.card h2:nth-child(95) *,
+.card h3:nth-child(95) *,
+.card h4:nth-child(95) *,
+.card h5:nth-child(95) *,
+.card h6:nth-child(95) *,
+.card div:nth-child(95) * {
+	animation-duration: 35.16667s;
+}
+.card p:nth-child(96),
+.card h1:nth-child(96),
+.card h2:nth-child(96),
+.card h3:nth-child(96),
+.card h4:nth-child(96),
+.card h5:nth-child(96),
+.card h6:nth-child(96),
+.card div:nth-child(96) {
+	animation-duration: 35.5s;
+}
+.card p:nth-child(96) *,
+.card h1:nth-child(96) *,
+.card h2:nth-child(96) *,
+.card h3:nth-child(96) *,
+.card h4:nth-child(96) *,
+.card h5:nth-child(96) *,
+.card h6:nth-child(96) *,
+.card div:nth-child(96) * {
+	animation-duration: 35.5s;
+}
+.card p:nth-child(97),
+.card h1:nth-child(97),
+.card h2:nth-child(97),
+.card h3:nth-child(97),
+.card h4:nth-child(97),
+.card h5:nth-child(97),
+.card h6:nth-child(97),
+.card div:nth-child(97) {
+	animation-duration: 35.83333s;
+}
+.card p:nth-child(97) *,
+.card h1:nth-child(97) *,
+.card h2:nth-child(97) *,
+.card h3:nth-child(97) *,
+.card h4:nth-child(97) *,
+.card h5:nth-child(97) *,
+.card h6:nth-child(97) *,
+.card div:nth-child(97) * {
+	animation-duration: 35.83333s;
+}
+.card p:nth-child(98),
+.card h1:nth-child(98),
+.card h2:nth-child(98),
+.card h3:nth-child(98),
+.card h4:nth-child(98),
+.card h5:nth-child(98),
+.card h6:nth-child(98),
+.card div:nth-child(98) {
+	animation-duration: 36.16667s;
+}
+.card p:nth-child(98) *,
+.card h1:nth-child(98) *,
+.card h2:nth-child(98) *,
+.card h3:nth-child(98) *,
+.card h4:nth-child(98) *,
+.card h5:nth-child(98) *,
+.card h6:nth-child(98) *,
+.card div:nth-child(98) * {
+	animation-duration: 36.16667s;
+}
+.card p:nth-child(99),
+.card h1:nth-child(99),
+.card h2:nth-child(99),
+.card h3:nth-child(99),
+.card h4:nth-child(99),
+.card h5:nth-child(99),
+.card h6:nth-child(99),
+.card div:nth-child(99) {
+	animation-duration: 36.5s;
+}
+.card p:nth-child(99) *,
+.card h1:nth-child(99) *,
+.card h2:nth-child(99) *,
+.card h3:nth-child(99) *,
+.card h4:nth-child(99) *,
+.card h5:nth-child(99) *,
+.card h6:nth-child(99) *,
+.card div:nth-child(99) * {
+	animation-duration: 36.5s;
+}
+.card p:nth-child(100),
+.card h1:nth-child(100),
+.card h2:nth-child(100),
+.card h3:nth-child(100),
+.card h4:nth-child(100),
+.card h5:nth-child(100),
+.card h6:nth-child(100),
+.card div:nth-child(100) {
+	animation-duration: 36.83333s;
+}
+.card p:nth-child(100) *,
+.card h1:nth-child(100) *,
+.card h2:nth-child(100) *,
+.card h3:nth-child(100) *,
+.card h4:nth-child(100) *,
+.card h5:nth-child(100) *,
+.card h6:nth-child(100) *,
+.card div:nth-child(100) * {
+	animation-duration: 36.83333s;
+}
+@-moz-keyframes card {
+	0%, 50% {
+		box-shadow: -70vw 0 0 2vw rgba(255, 255, 255, 0.05) inset, -140vw 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+	100% {
+		box-shadow: 0 0 0 2vw rgba(255, 255, 255, 0.05) inset, calc(-66vw + 1px) 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+}
+@-webkit-keyframes card {
+	0%, 50% {
+		box-shadow: -70vw 0 0 2vw rgba(255, 255, 255, 0.05) inset, -140vw 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+	100% {
+		box-shadow: 0 0 0 2vw rgba(255, 255, 255, 0.05) inset, calc(-66vw + 1px) 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+}
+@-o-keyframes card {
+	0%, 50% {
+		box-shadow: -70vw 0 0 2vw rgba(255, 255, 255, 0.05) inset, -140vw 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+	100% {
+		box-shadow: 0 0 0 2vw rgba(255, 255, 255, 0.05) inset, calc(-66vw + 1px) 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+}
+@keyframes card {
+	0%, 50% {
+		box-shadow: -70vw 0 0 2vw rgba(255, 255, 255, 0.05) inset, -140vw 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+	100% {
+		box-shadow: 0 0 0 2vw rgba(255, 255, 255, 0.05) inset, calc(-66vw + 1px) 0 0 2vw rgba(255, 255, 255, 0.05) inset;
+	}
+}
+@-moz-keyframes boxshadow-light {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 #fff inset;
+	}
+	80% {
+		box-shadow: 50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: #fff;
+		box-shadow: 0 0 #fff inset;
+	}
+}
+@-webkit-keyframes boxshadow-light {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 #fff inset;
+	}
+	80% {
+		box-shadow: 50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: #fff;
+		box-shadow: 0 0 #fff inset;
+	}
+}
+@-o-keyframes boxshadow-light {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 #fff inset;
+	}
+	80% {
+		box-shadow: 50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: #fff;
+		box-shadow: 0 0 #fff inset;
+	}
+}
+@keyframes boxshadow-light {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 #fff inset;
+	}
+	80% {
+		box-shadow: 50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 #fff inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: #fff;
+		box-shadow: 0 0 #fff inset;
+	}
+}
+@-moz-keyframes boxshadow-medium {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.85);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+}
+@-webkit-keyframes boxshadow-medium {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.85);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+}
+@-o-keyframes boxshadow-medium {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.85);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+}
+@keyframes boxshadow-medium {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.85) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.85);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.85) inset;
+	}
+}
+@-moz-keyframes boxshadow-dark {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+}
+@-webkit-keyframes boxshadow-dark {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+}
+@-o-keyframes boxshadow-dark {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+}
+@keyframes boxshadow-dark {
+	0%, 40% {
+		color: rgba(0, 0, 0, 0);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+	80% {
+		box-shadow: 50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	80% {
+		box-shadow: -50vw 0 rgba(255, 255, 255, 0.5) inset;
+		color: rgba(0, 0, 0, 0);
+	}
+	100% {
+		color: rgba(255, 255, 255, 0.5);
+		box-shadow: 0 0 rgba(255, 255, 255, 0.5) inset;
+	}
+}
+@-moz-keyframes fadein {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes fadein {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@-o-keyframes fadein {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+@keyframes fadein {
+	0%, 80% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}

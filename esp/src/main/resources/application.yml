@@ -1,0 +1,10 @@
+### 修改启动端口号
+server:
+  port: 22222
+### 加载其他配置文件
+spring:
+  profiles:
+    active: data,thymeleaf
+    ### 设定项目计算应用名
+  application:
+    name: esp

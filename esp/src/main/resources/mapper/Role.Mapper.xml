@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ekgc.esp.dao.RoleDao">
+	<select id="findListByQuery" parameterType="Role" resultMap="entityMap">
+		select
+			id,
+			name,
+			status,
+			create_time,
+			update_time
+		from
+			sys_role
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and </if>
+				<if test="name != null">name=#{name} and </if>
+				<if test="status != null">status=#{status} and </if>
+			</trim>
+		</where>
+	</select>
+
+	<insert id="save" parameterType="Role">
+		insert into sys_role(
+			<trim suffixOverrides=",">
+				<if test="name != null">name, </if>
+				<if test="status != null">status, </if>
+			</trim>
+		) values(
+		<trim suffixOverrides=",">
+			<if test="name != null">#{name}, </if>
+			<if test="status != null">#{status}, </if>
+		</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="Role">
+		update sys_role
+		<set>
+			<trim suffixOverrides=",">
+				<if test="name != null">name=#{name}, </if>
+				<if test="status != null">status=#{status}, </if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and </if>
+			</trim>
+		</where>
+	</update>
+
+	<delete id="deleteRoleMenuByRoleId" parameterType="java.lang.Long">
+		delete from sys_role_menu where role_id=#{id}
+	</delete>
+
+	<insert id="saveRoleMenu" parameterType="java.util.Map">
+		insert into sys_role_menu(role_id, menu_id) values(#{roleId}, #{menuId})
+	</insert>
+
+	<resultMap id="entityMap" type="Role">
+		<id property="id" javaType="java.lang.Long" column="id"/>
+		<result property="name" javaType="java.lang.String" column="name"/>
+		<result property="status" javaType="java.lang.Integer" column="status"/>
+		<result property="createTime" javaType="java.util.Date" column="create_time"/>
+		<result property="updateTime" javaType="java.util.Date" column="update_time"/>
+	</resultMap>
+</mapper>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript">
+			function savePurchase() {
+				var saveForm = $("#saveForm").serialize();
+				$.ajax({
+					url: "/purchase/buy",
+					type: "post",
+					data: saveForm,
+					dataType: "json",
+					success: function (data) {
+						if (data.result) {
+							alert(data.data);
+							parent.closeModal();
+						} else {
+							alert(data.data);
+						}
+					}
+				});
+			}
+
+			function checkNull(id, lable) {
+				var val = $("#" + id ).val();
+				if (val == null || val == "") {
+					document.getElementById(lable).innerHTML = "*此处为必填";
+				} else {
+					document.getElementById(lable).innerHTML = "";
+				}
+			}
+		</script>
+	</head>
+	<body>
+	<div class="container">
+		<div class="col-md-12">
+			<form id="saveForm">
+				<table class="table table-bordered table-hover">
+					<tr>
+						<td align="right">物资名称：</td>
+						<td colspan="2">
+							<input id="goodsName" class="form-control" onblur="checkNull('goodsName', 'nameLable')" type="text" name="goodsName">
+							<label id="nameLable" style="color:#ff0000"></label>
+							<input name="id" type="hidden" th:value="${id}">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">物资数量：</td>
+						<td>
+							<input id="goodsQuantity" onblur="checkNull('goodsQuantity', 'quantityLable')" class="form-control" type="text" name="num">
+							<label id="quantityLable" style="color:#ff0000"></label>
+						</td>
+						<td>
+							<select class="form-control" name="goodsUnit">
+								<option value="件">件</option>
+								<option value="台">台</option>
+								<option value="个">个</option>
+								<option value="只">只</option>
+								<option value="辆">辆</option>
+								<option value="克">克</option>
+								<option value="千克">千克</option>
+								<option value="吨">吨</option>
+								<option value="米">米</option>
+								<option value="米粒">厘米</option>
+								<option value="毫升">毫升</option>
+								<option value="升">升</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">购买单价：</td>
+						<td colspan="2">
+							<input id="goodsPrePrice" onblur="checkNull('goodsPrePrice', 'goodsPrePriceLable')" class="form-control" type="text" name="pre">&nbsp;元
+							<label id="goodsPrePriceLable" style="color:#ff0000"></label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">购买优惠：</td>
+						<td colspan="2">
+							<input id="goodsDiscount" class="form-control" type="text" name="dis">&nbsp;元
+						</td>
+					</tr>
+					<tr>
+						<td align="right">生产厂家：</td>
+						<td colspan="2">
+							<input id="goodsCompany" class="form-control" type="text" name="goodsCompany">
+						</td>
+					</tr>
+					<tr>
+						<td align="right">采购备注：</td>
+						<td colspan="2">
+							<textarea name="purchaseRemake" rows="5" cols="50"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td colspan="3" align="right">
+							<a href="javascript:savePurchase()" class="btn btn-success">提交</a>
+						</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+### 配置数据库连接信息
+spring:
+  ### JDBC 连接信息
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/esp_db?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: root
+    ### 配置 Druid 作为数据库连接池
+    type: com.alibaba.druid.pool.DruidDataSource
+    ### 配置 Druid 相关信息
+    druid:
+      min-idle: 3
+      max-active: 15
+      initial-size: 5
+      max-evictable-idle-time-millis: 60000
+      min-evictable-idle-time-millis: 30000
+  redis:
+    host: localhost
+    port: 6379
+  mail:
+    host: smtp.qq.com
+    port: 587
+    username: 296506895@qq.com
+    password: vsttarnrfqgbbjhg
+    default-encoding: utf-8
+    protocol: smtp
+### 配置 Mybatis 相关信息
+mybatis:
+  mapper-locations: classpath:/mapper/*.Mapper.xml
+  type-aliases-package: cn.ekgc.esp.pojo.entity

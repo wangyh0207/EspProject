@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/ztree/css/zTreeStyle/zTreeStyle.css">
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript" src="/ztree/js/jquery.ztree.all.min.js"></script>
+		<script type="application/javascript">
+			var setting = {
+				view: {
+					selectedMulti: false
+				},
+				check: {
+					enable: true
+				},
+				data: {
+					simpleData: {
+						enable: true
+					}
+				},
+				callback: {
+					onCheck: onCheck
+				}
+			};
+			var clearFlag = false;
+			function onCheck(e, treeId, treeNode) {
+				if (clearFlag) {
+					clearCheckedOldNodes();
+				}
+			}
+			function clearCheckedOldNodes() {
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo"),
+					nodes = zTree.getChangeCheckedNodes();
+				for (var i=0, l=nodes.length; i<l; i++) {
+					nodes[i].checkedOld = nodes[i].checked;
+				}
+			}
+			$(document).ready(function(){
+				// 通过异步方式获得该角色现有的功能菜单
+				var id = $("#id").val();
+				$.ajax({
+					url: "../../menu/auth/" + id,
+					type: "post",
+					dataType: "json",
+					success: function(data) {
+						var zNodes = data.data;
+						// 此时获得的 data 就是需要的节点
+						$.fn.zTree.init($("#treeDemo"), setting, zNodes);
+					}
+				});
+			});
+
+			function auth() {
+				// 获得角色主键
+				var id = $("#id").val();
+				// 获得 zTree 对象
+				var zTree = $.fn.zTree.getZTreeObj("treeDemo");
+				// 获得用户此时所选择的菜单信息
+				var checkedNodes = zTree.getCheckedNodes(true);
+				// 循环节点， 拼接 id
+				var nodeIds = "";
+				for (var i = 0; i < checkedNodes.length; i++) {
+					var nodeId = checkedNodes[i].id;
+					nodeIds = nodeIds + "-" + nodeId;
+				}
+				// 去掉前面的 “-”
+				nodeIds = nodeIds.substr(1, nodeIds.length);
+				// 进行异步授权
+				$.ajax({
+					type: "post",
+					data: {
+						"nodeIds": nodeIds
+					},
+					dataType: "json",
+					success: function (data) {
+						alert(data.data);
+						if (data.result) {
+							// 关闭模态框
+							parent.closeModal();
+							// 重定向到列表页面
+							parent.openFrames("/role/index");
+						}
+					}
+				});
+			}
+		</script>
+		</head>
+		<body>
+		<input type="hidden" id="id" name="id" th:value="${id}"/>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content_wrap">
+						<div class="zTreeDemoBackground left">
+							<ul id="treeDemo" class="ztree"></ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<button type="button" onclick="auth()" class="btn btn-success">授权</button>
+			</div>
+		</div>
+	</body>
+</html>

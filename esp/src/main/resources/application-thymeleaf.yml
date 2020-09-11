@@ -1,0 +1,9 @@
+### 配置 Thymeleaf 信息
+spring:
+  thymeleaf:
+    ### 关闭页面缓存
+    cache: false
+    encoding: UTF-8
+    ### 设定转发前后缀
+    prefix: classpath:/view/
+    suffix: .html

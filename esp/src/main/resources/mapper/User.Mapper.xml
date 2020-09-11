@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.ekgc.esp.dao.UserDao">
+	<select id="findListByQuery" parameterType="User" resultMap="entityMap">
+		select
+			su.id,
+			su.name,
+			su.cellphone,
+			su.password,
+			sr.id role_id,
+			sr.name role_name,
+			su.id_card,
+			su.avatar,
+			su.status,
+			su.create_time,
+			su.update_time
+		from
+			sys_user su join sys_role sr on su.role_id=sr.id
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">su.id=#{id} and </if>
+				<if test="name != null">su.name=#{name} and </if>
+				<if test="cellphone != null">su.cellphone=#{cellphone} and </if>
+				<if test="role != null and role.id != null">sr.id=#{role.id} and </if>
+				<if test="idCard != null">su.id_card=#{idCard} and </if>
+				<if test="avatar != null">su.avatar=#{avatar} and </if>
+				<if test="status != null">su.status=#{status} and </if>
+			</trim>
+		</where>
+	</select>
+
+	<insert id="save" parameterType="User">
+		insert into sys_user(
+			<trim suffixOverrides=",">
+				<if test="name != null">name, </if>
+				<if test="cellphone != null">cellphone, </if>
+				<if test="password != null">password, </if>
+				<if test="role != null and role.id != null">role_id, </if>
+				<if test="idCard != null">id_card, </if>
+				<if test="avatar != null">avatar, </if>
+				<if test="status != null">status, </if>
+			</trim>
+		) values(
+			<trim suffixOverrides=",">
+				<if test="name != null">#{name}, </if>
+				<if test="cellphone != null">#{cellphone}, </if>
+				<if test="password != null">#{password}, </if>
+				<if test="role != null and role.id != null">#{role.id}, </if>
+				<if test="idCard != null">#{idCard}, </if>
+				<if test="avatar != null">#{avatar}, </if>
+				<if test="status != null">#{status}, </if>
+			</trim>
+		)
+	</insert>
+
+	<update id="update" parameterType="User">
+		update sys_user
+		<set>
+			<trim suffixOverrides=",">
+				<if test="name != null">name=#{name}, </if>
+				<if test="cellphone != null">cellphone=#{cellphone}, </if>
+				<if test="password != null">password=#{password}, </if>
+				<if test="role != null and role.id != null">role_id=#{role.id}, </if>
+				<if test="idCard != null">id_card=#{idCard}, </if>
+				<if test="avatar != null">avatar=#{avatar}, </if>
+				<if test="status != null">status=#{status}, </if>
+			</trim>
+		</set>
+		<where>
+			<trim suffixOverrides="and">
+				<if test="id != null">id=#{id} and </if>
+			</trim>
+		</where>
+	</update>
+
+	<resultMap id="entityMap" type="User">
+		<id property="id" javaType="java.lang.Long" column="id"/>
+		<result property="name" javaType="java.lang.String" column="name"/>
+		<result property="cellphone" javaType="java.lang.String" column="cellphone"/>
+		<result property="password" javaType="java.lang.String" column="password"/>
+		<result property="idCard" javaType="java.lang.String" column="id_card"/>
+		<result property="avatar" javaType="java.lang.String" column="avatar"/>
+		<result property="status" javaType="java.lang.Integer" column="status"/>
+		<result property="createTime" javaType="java.util.Date" column="create_time"/>
+		<result property="updateTime" javaType="java.util.Date" column="update_time"/>
+		<association property="role" javaType="Role">
+			<id property="id" javaType="java.lang.Long" column="role_id"/>
+			<result property="name" javaType="java.lang.String" column="role_name"/>
+		</association>
+	</resultMap>
+</mapper>

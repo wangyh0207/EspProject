@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/ionicons.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/AdminLTE.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/skins/_all-skins.min.css">
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-ui.min.js"></script>
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/adminlte.min.js"></script>
+		<script type="application/javascript">
+			function openFrame(url, id) {
+				var iframe = "<iframe src='" + url + "/" + id + "' style='width: 100%;height: 600px; border: 0px;' onscroll='true'></iframe>"
+				$("#content").html(iframe);
+			}
+
+			function openFrames(url) {
+				var iframe = "<iframe src='" + url + "'style='width: 100%;height: 600px; border: 0px;' onscroll='true'></iframe>"
+				$("#content").html(iframe);
+			}
+
+			function openModal(title, url, id) {
+				// 修改模态框标题
+				$("#myModalLabel").html(title);
+				var ifram = "<iframe src='" + url + "/" + id + "' style='width: 100%;height: 600px; border: 0px'></iframe>";
+				$("#modalBody").html(ifram);
+				$("#myModal").modal();
+			}
+
+			function closeModal() {
+				$("#myModal").modal('hide');
+			}
+		</script>
+		<script type="application/javascript">
+			function signOut() {
+				$.ajax({
+					url: "../signOut",
+					type: "get",
+					data: {
+						"token": localStorage.getItem("token")
+					},
+					dataType: "json",
+					success: function (data) {
+						if (data) {
+							alert("退出成功");
+							location.replace(location.href = "/user/login");
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body class="hold-transition skin-blue sidebar-mini">
+	<div class="wrapper">
+			<header class="main-header">
+				<div class="logo">
+					<span class="logo-mini"><b>ESP</b></span>
+					<span class="logo-lg"><b>ESP物资采购</b></span>
+				</div>
+				<nav class="navbar navbar-static-top">
+					<a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+						<span class="sr-only">Toggle navigation</span>
+					</a>
+					<div class="navbar-custom-menu">
+						<ul class="nav navbar-nav">
+							<li class="dropdown messages-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+									<i class="fa fa-user"></i>&nbsp;
+									<span th:text="${login.name}"></span>
+								</a>
+							</li>
+							<li>
+								<a href="javascript:signOut()">
+									<i class="fa fa-sign-out"></i>&nbsp;
+									退出
+								</a>
+							</li>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<aside class="main-sidebar">
+				<section class="sidebar">
+					<div class="user-panel"></div>
+					<ul class="sidebar-menu" data-widget="tree">
+						<li class="header">MAIN NAVIGATION</li>
+						<li class="treeview" th:each="menu:${menuList}">
+							<a href="#">
+								<i th:class="${menu.icon}"></i>&nbsp;
+								<span th:text="${menu.text}"></span>
+								<span class="pull-right-container">
+	                                <i class="fa fa-angle-left pull-right"></i>
+	                            </span>
+							</a>
+							<ul class="treeview-menu">
+								<li th:each="child:${menu.childList}">
+									<a th:href="|javascript:openFrame('${child.url}', '${login.id}')|">
+										<i th:class="${child.icon}"></i>&nbsp;
+										<span th:text="${child.text}"></span>
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</aside>
+			<div class="content-wrapper">
+				<section id="content" class="content"></section>
+			</div>
+			<footer class="main-footer">
+				<div class="pull-right hidden-xs">
+					<b>Version</b> 1.0.0
+				</div>
+				<strong>Copyright &copy; 2020-2030 <a href="https://www.adultswim.com/etcetera/elastic-man/">ESP</a>.</strong> All rights
+				reserved.
+			</footer>
+		</div>
+
+		<!-- 模态框（Modal） -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+						<h4 class="modal-title" id="myModalLabel"></h4>
+					</div>
+					<div class="modal-body" id="modalBody"></div>
+				</div><!-- /.modal-content -->
+			</div><!-- /.modal -->
+		</div>
+	</body>
+</html>

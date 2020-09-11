@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/forget.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript">
+			var password = document.querySelector('.password');
+			var error = document.querySelector('.error-message');
+			var padlock = document.querySelector('.padlock');
+			var arrow = document.querySelector('.arrow-icon');
+			var input = document.querySelector('.input-icon');
+			var pass = "dupa";
+			password.addEventListener('keypress', function(e) {
+				var key = e.which || e.keyCode;
+				if (key === 13) {
+					if (password.value != "") {
+						if (password.value != pass) {
+							error.classList.add('show');
+							padlock.classList.remove('unlock');
+						} else {
+							error.classList.remove('show');
+							unlock();
+						}
+					}
+				}
+			});
+			password.addEventListener('keyup', function() {
+				if (password.value == "") {
+					error.classList.remove('show');
+					padlock.classList.remove('unlock');
+					arrow.classList.remove('show');
+				} else {
+					arrow.classList.add('show');
+				}
+			});
+			arrow.addEventListener('click', function() {
+				if (password.value != pass) {
+					error.classList.add('show');
+					padlock.classList.remove('unlock');
+				} else {
+					error.classList.remove('show');
+					unlock();
+				}
+			}, false);
+
+			function unlock() {
+				padlock.classList.add('unlock');
+				input.classList.add('unlock');
+				setTimeout(function() {
+					padlock.classList.add('hide');
+					setTimeout(function() {
+						window.location.href = '';
+					}, 900);
+				}, 600);
+			}
+
+			function checkThis() {
+				var idCard = $("#idCard").val();
+				var avatar = $("#avatar").val();
+				$.ajax({
+					url: "check",
+					type: "post",
+					data: {
+						"idCard": idCard,
+						"avatar": avatar
+					},
+					dataType: "json",
+					success: function (data) {
+						if (data.result) {
+							alert("请注意查收验证码！");
+						} else {
+							alert(data.data);
+						}
+					}
+				});
+			}
+
+			function changePassword() {
+				var vcode = $("#vcode").val();
+				var password = $("#password").val();
+				$.ajax({
+					url: "changePs",
+					type: "post",
+					data: {
+						"vcode": vcode,
+						"password": password
+					},
+					dataType: "json",
+					success: function (data) {
+						if (data.result) {
+							alert(data.data);
+							location.href = "login";
+						} else {
+							alert(data.data);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body>
+		<div class="center">
+			<label>
+				<div class="padlock">
+					<svg id="lock" viewbox="0 0 64 64">
+						<circle stroke-width="2" fill="none" cx="32" cy="32" r="31" />
+						<path d="M40.2,29v-4c0-4.5-3.7-8.2-8.2-8.2s-8.2,3.7-8.2,8.2v4H21v15h22V29H40.2z M27.2,25 c0-2.6,2.1-4.8,4.8-4.8s4.8,2.1,4.8,4.8v4h-9.5V25z" />
+					</svg>
+				</div>
+			</label>
+			<div class="input-icon">
+				<form>
+					<table>
+						<tr>
+							<td>
+								<input id="idCard" name="idCard" class="password" placeholder="请输入身份证号码" type="text"><br>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="avatar" name="avatar" class="password" onblur="checkThis()" placeholder="请输入电子邮箱" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="vcode" name="vcode" class="password" placeholder="请输入验证码" type="text">
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<input id="password" name="password" class="password" onblur="changePassword()" placeholder="请输入新密码" type="password">
+							</td>
+						</tr>
+					</table>
+				</form>
+				<div class="arrow-icon">
+					<svg id="arrow" viewbox="0 0 48 44">
+						<polygon points="27.7,13.3 26.3,14.7 31.6,20 14,20 14,22 31.6,22 26.3,27.3 27.7,28.7 35.4,21 " />
+					</svg>
+				</div>
+				<div class="error-message">Please try again.</div>
+			</div>
+		</div>
+	</body>
+</html>

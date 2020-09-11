@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<table class="table table-hover table-bordered">
+						<tr>
+							<td align="right">采购编号：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.no}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">申请物资名称：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.applyName}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">申请物资数量：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.applyQuantity} + ${detail.applyUnit}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">申请备注：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.applyRemark}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">申请人：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.applyUser.name}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">申请时间：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.applyTime}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">审核意见：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.checkSuggestion}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">审核人：</td>
+							<td>
+								<input type="text" th:if="${detail.checkUser != null}" class="form-control" th:value="${detail.checkUser.name}" disabled="disabled">
+								<input type="text" th:if="${detail.checkUser == null}" class="form-control" value="" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">审核时间：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.checkTime}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">购买物资名称：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.goodsName}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">购买物资数量：</td>
+							<td>
+								<input type="text" th:if="${detail.goodsQuantity != null}" class="form-control" th:value="${detail.goodsQuantity} + ${detail.goodsUnit}" disabled="disabled">
+								<input type="text" th:if="${detail.goodsQuantity == null}" class="form-control" value="" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">购买单价：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.goodsPrePrice}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">购买优惠：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.goodsDiscount}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">购买总额：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.goodsTotalAmount}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">生产厂家：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.goodsCompany}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">采购备注：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.purchaseRemake}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">采购人：</td>
+							<td>
+								<input type="text" th:if="${detail.purchaseUser != null}" class="form-control" th:value="${detail.purchaseUser.name}" disabled="disabled">
+								<input type="text" th:if="${detail.purchaseUser == null}" class="form-control" value="" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">采购时间：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.purchaseTime}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">入库人：</td>
+							<td>
+								<input type="text" th:if="${detail.storeUser != null}" class="form-control" th:value="${detail.storeUser.name}" disabled="disabled">
+								<input type="text" th:if="${detail.storeUser == null}" class="form-control" value="" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">入库时间：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.storeTime}" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">领取人：</td>
+							<td>
+								<input type="text" th:if="${detail.drawUser != null}" class="form-control" th:value="${detail.drawUser.name}" disabled="disabled">
+								<input type="text" th:if="${detail.drawUser == null}" class="form-control" value="" disabled="disabled">
+							</td>
+						</tr>
+						<tr>
+							<td align="right">领取时间：</td>
+							<td>
+								<input type="text" class="form-control" th:value="${detail.drawTime}" disabled="disabled">
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

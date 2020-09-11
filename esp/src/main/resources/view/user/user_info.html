@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/info.css">
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>\
+		<style type="text/css">
+			#change {
+				cursor: pointer;
+			}
+			#password {
+				cursor: pointer;
+			}
+		</style>
+		<script type="application/javascript">
+			function change(id) {
+				parent.openModal("修改个人信息", "/user/change", id);
+			}
+			function changePassword(id) {
+				parent.openModal("修改密码", "/user/password", id);
+			}
+		</script>
+	</head>
+	<body>
+		<div class="card">
+			<div class="content">
+				<h1 class="light">个人信息<span class="dark">.</span></h1></br>
+				<p class="medium">姓名：<a class="light" href="#" th:text="${user.name}"></a>
+				</p></br>
+				<p class="medium">角色信息：<span th:text="${user.role.name}"></span></p></br>
+				<p class="medium">手机号码：<span th:text="${user.cellphone}"></span></p></br>
+				<p class="medium">电子邮箱：<span th:text="${user.avatar}"></span></p></br>
+				<p class="medium">身份证号码：<span th:text="${user.idCard}"></span></p></br>
+				<div class="column">
+					<h6 class="dark">Modify Information</h6>
+					<br />
+					<h5 class="medium"><p id="change" class="light" th:onclick="'javascript:change(\'' + ${user.id} + '\')'">修改信息</p></h5>
+					<h5 class="medium">warning</h5>
+				</div>
+				<div class="column">
+					<h6 class="dark">Password</h6>
+					<br />
+					<h5 class="medium"><p id="password" class="light" th:onclick="'javascript:changePassword(\'' + ${user.id} + '\')'">修改密码</p></h5>
+					<h5 class="medium">code MD5</h5>
+				</div>
+				<div class="tabs dark">
+					<p class="tab">Thing one</p>
+					<p class="tab">Thing two</p>
+					<p class="tab">Thing three</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Title</title>
+		<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/font-awesome.min.css">
+		<link rel="stylesheet" type="text/css" href="/css/AdminLTE.min.css">
+		<script type="application/javascript" src="/js/jquery-3.5.1.min.js"></script>
+		<script type="application/javascript" src="/js/bootstrap.min.js"></script>
+		<script type="application/javascript">
+			function login() {
+				// 将表单数据进行序列化
+				var loginData = $("#loginForm").serialize();
+				// 进行异步登录
+				$.ajax({
+					url: "login",
+					type: "post",
+					data: loginData,
+					dataType: "json",
+					success: function (data, status, xhr) {
+						// 通过 xhr（XMLHttpRequest 对象）获得绑定到 response header 的 token
+						var token = xhr.getResponseHeader("Authorization");
+						var result = data.result;
+						if (result) {
+							// 将获得的 Token 存储于 localStorage
+							localStorage.setItem("token", token)
+							// 登录成功，跳转到首页面
+							location.href = "../index/" + token;
+						} else {
+							// 登录失败，获得失败信息data
+							var reason = data.data;
+							alert(reason);
+						}
+					}
+				});
+			}
+		</script>
+	</head>
+	<body class="hold-transition login-page">
+		<div class="login-box">
+			<div class="login-logo">
+				<a href="#"><b>ESP</b>物资采购平台</a>
+			</div>
+			<div class="login-box-body">
+				<p class="login-box-msg">Sign in to start your session</p>
+				<form id="loginForm">
+					<div class="form-group has-feedback">
+						<input type="text" name="cellphone" class="form-control" placeholder="请输入您的手机号码">
+						<span class="glyphicon glyphicon-phone form-control-feedback"></span>
+					</div>
+					<div class="form-group has-feedback">
+						<input type="password" name="password" class="form-control" placeholder="请输入您的登录密码">
+						<span class="glyphicon glyphicon-lock form-control-feedback"></span>
+					</div>
+					<div class="row">
+						<div class="col-xs-8">
+							<div class="checkbox icheck">
+								<label></label>
+							</div>
+						</div>
+						<div class="col-xs-4">
+							<a href="javascript:login();" class="btn btn-primary btn-block btn-flat">登录</a>
+						</div>
+					</div>
+				</form>
+
+				<div class="social-auth-links text-center">
+					<p></p>
+				</div>
+				<a href="forget">忘记密码...</a><br>
+			</div>
+		</div>
+	</body>
+</html>
